@@ -1,0 +1,6 @@
+module Pods_fruitMinder_boilerplate {
+  umbrella header "Pods-fruitMinder_boilerplate-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_fruitMinder_boilerplate_fruitMinder_boilerplateTests : NSObject
+@end
+@implementation PodsDummy_Pods_fruitMinder_boilerplate_fruitMinder_boilerplateTests
+@end

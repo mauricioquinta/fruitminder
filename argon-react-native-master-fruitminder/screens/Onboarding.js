@@ -21,30 +21,29 @@ class Onboarding extends React.Component {
       <Block flex style={styles.container}>
         <StatusBar hidden />
         <Block flex center>
-        <ImageBackground
+            <ImageBackground
             source={Images.Onboarding}
             style={{ height, width, zIndex: 1 }}
-          />
+            />
         </Block>
+	    
         <Block center>
-          <Image source={Images.LogoOnboarding} style={styles.logo} />
+            <Image source={Images.LogoOnboarding} style={{height:215, width:205}} />
         </Block>
+
+	
         <Block flex space="between" style={styles.padded}>
             <Block flex space="around" style={{ zIndex: 2 }}>
               <Block style={styles.title}>
                 <Block>
-                  <Text color="white" size={60}>
-                    Design
+                  <Text color="black" size={60}>
+                    Fruitminder
                   </Text>
                 </Block>
-                <Block>
-                  <Text color="white" size={60}>
-                    System
-                  </Text>
-                </Block>
+                
                 <Block style={styles.subTitle}>
-                  <Text color="white" size={16}>
-                    Fully coded React Native components.
+                  <Text color="black" size={16}>
+                       We offer a way to track, update, and assign tasks for your fruit farm and orchard.
                   </Text>
                 </Block>
               </Block>

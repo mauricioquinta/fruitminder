@@ -10,11 +10,13 @@ import { Block } from "galio-framework";
 // screens
 import Home from "../screens/Home";
 import Onboarding from "../screens/Onboarding";
+import OnboardingPick from "../screens/OnboardingPick"
 import Pro from "../screens/Pro";
 import Profile from "../screens/Profile";
 import Register from "../screens/Register";
 import Elements from "../screens/Elements";
 import Articles from "../screens/Articles";
+import newRegister from "../screens/newRegister"
 // drawer
 import CustomDrawerContent from "./Menu";
 
@@ -75,7 +77,7 @@ function ArticlesStack(props) {
           cardStyle: { backgroundColor: "#F8F9FE" }
         }}
       />
-            <Stack.Screen
+      <Stack.Screen
         name="Pro"
         component={Pro}
         options={{
@@ -186,8 +188,31 @@ export default function OnboardingStack(props) {
         option={{
           headerTransparent: true
         }}
-      />
-      <Stack.Screen name="App" component={AppStack} />
+    />
+    
+    <Stack.Screen name="App" component={AppStack} />
+    <Stack.Screen name="OnboardingPick" component={OnboardingPickStack} />
+    
+    </Stack.Navigator>
+  );
+}
+
+
+function OnboardingPickStack(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="OnboardingPick"
+        component={OnboardingPick}
+        option={{
+          headerTransparent: true
+        }}
+    />
+    
+    <Stack.Screen name="App" component={AppStack} />
+    <Stack.Screen name="Login" component={Register} />
+    <Stack.Screen name="newUser" component={newRegister} />
+    
     </Stack.Navigator>
   );
 }
@@ -231,4 +256,8 @@ function AppStack(props) {
     </Drawer.Navigator>
   );
 }
+
+
+
+
 

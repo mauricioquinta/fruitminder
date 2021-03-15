@@ -47,16 +47,27 @@ class Onboarding extends React.Component {
                   </Text>
                 </Block>
               </Block>
+	      
               <Block center>
                 <Button
                   style={styles.button}
                   color={argonTheme.COLORS.SECONDARY}
-                  onPress={() => navigation.navigate("OnboardingPick")}
+                  onPress={() => navigation.navigate("Login")}
                   textStyle={{ color: argonTheme.COLORS.BLACK }}
                 >
-                  Get Started
+                  Login
+                </Button>
+
+                <Button
+                  style={styles.button}
+                  color={argonTheme.COLORS.SECONDARY}
+                  onPress={() => navigation.navigate("newUser")}
+                  textStyle={{ color: argonTheme.COLORS.BLACK }}
+                >
+                  Create Account
                 </Button>
               </Block>
+	      
           </Block>
         </Block>
       </Block>

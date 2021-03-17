@@ -16,7 +16,7 @@ import Profile from "../screens/Profile";
 import Register from "../screens/Register";
 import Elements from "../screens/Elements";
 import Articles from "../screens/Articles";
-import newRegister from "../screens/newRegister"
+import newAccount_1 from "../screens/newAccount_1"
 // drawer
 import CustomDrawerContent from "./Menu";
 
@@ -211,7 +211,7 @@ function OnboardingPickStack(props) {
     
     <Stack.Screen name="App" component={AppStack} />
     <Stack.Screen name="Login" component={Register} />
-    <Stack.Screen name="newUser" component={newRegister} />
+    <Stack.Screen name="newUser" component={newAccount_1} />
     
     </Stack.Navigator>
   );

@@ -17,4 +17,7 @@ class Tree(models.Model):
     treeAge = models.IntegerField()
     treeVariety = models.CharField(max_length=120)
     treeStatus = models.CharField(max_length=120)
-    GPS_coordinates = models.CharField(max_length=120)
+    GPS_Coordinates = models.CharField(max_length=120)
+
+    def _str_(self):
+        return self.treeName

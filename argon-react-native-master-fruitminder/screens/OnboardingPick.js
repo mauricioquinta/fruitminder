@@ -66,6 +66,15 @@ class Onboarding extends React.Component {
                 >
                   Create Account
                 </Button>
+
+		<Button
+                  style={styles.button}
+                  color={argonTheme.COLORS.SECONDARY}
+                  onPress={() => navigation.navigate("todoTest")}
+                  textStyle={{ color: argonTheme.COLORS.BLACK }}
+                >
+                  toDoTest
+                </Button>
               </Block>
 	      
           </Block>

@@ -17,6 +17,8 @@ import Register from "../screens/Register";
 import Elements from "../screens/Elements";
 import Articles from "../screens/Articles";
 import newAccount_1 from "../screens/newAccount_1"
+import newAccount_2 from "../screens/newAccount_2"
+import todoTest from "../screens/todoTest"
 // drawer
 import CustomDrawerContent from "./Menu";
 
@@ -211,11 +213,34 @@ function OnboardingPickStack(props) {
     
     <Stack.Screen name="App" component={AppStack} />
     <Stack.Screen name="Login" component={Register} />
-    <Stack.Screen name="newUser" component={newAccount_1} />
+    <Stack.Screen name="newUser" component={CreateNewAccount_1} />
+    <Stack.Screen name="todoTest" component={todoTest} />
+	  
     
     </Stack.Navigator>
   );
 }
+
+
+function CreateNewAccount_1(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="newUser_1"
+        component={newAccount_1}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      
+    <Stack.Screen name="App" component={AppStack} />
+    <Stack.Screen name="prev" component={OnboardingPickStack} />
+    <Stack.Screen name="next" component={newAccount_2} />
+    
+    </Stack.Navigator>
+  );
+}
+
 
 function AppStack(props) {
   return (

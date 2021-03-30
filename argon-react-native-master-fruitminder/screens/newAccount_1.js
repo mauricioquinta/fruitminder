@@ -14,7 +14,9 @@ import { Images, argonTheme } from "../constants";
 const { width, height } = Dimensions.get("screen");
 
 class Register extends React.Component {
-  render() {
+    render() {
+	 const { navigation } = this.props;
+	
     return (
       <Block flex middle>
         <StatusBar hidden />
@@ -200,12 +202,16 @@ class Register extends React.Component {
                     </Block>
 		    
                     <Block row  width={width * 0.75} style={{justifyContent: 'space-between'}}>
-                      <Button color="secondary" style={styles.createButton}>
+                      <Button color="secondary" style={styles.createButton}
+			      onPress={() => navigation.navigate("prev")}
+			      >
                         <Text bold size={14} color={argonTheme.COLORS.BLACK}>
                           Previous Step
                         </Text>
                       </Button>
-		      <Button color="secondary" style={styles.createButton}>
+		      <Button color="secondary" style={styles.createButton}
+			      onPress={() => navigation.navigate("next")}
+			      >
                         <Text bold size={14} color={argonTheme.COLORS.BLACK}>
                           Next Step
                         </Text>

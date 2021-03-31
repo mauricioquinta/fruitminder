@@ -7,19 +7,19 @@ import articles from '../constants/articles';
 const { width } = Dimensions.get('screen');
 
 class Home extends React.Component {
-    /* this needs to be changed to get the trees object displayed*/
   renderArticles = () => {
     return (
       <ScrollView
         showsVerticalScrollIndicator={false}
-	
         contentContainerStyle={styles.articles}>
         <Block flex>
           <Card item={articles[0]} horizontal  />
-          <Card item={articles[1]} horizontal />
-          <Card item={articles[2]} horizontal />
+          <Block flex row>
+            <Card item={articles[1]} style={{ marginRight: theme.SIZES.BASE }} />
+            <Card item={articles[2]} />
+          </Block>
           <Card item={articles[3]} horizontal />
-          <Card item={articles[4]} horizontal />
+          <Card item={articles[4]} full />
         </Block>
 	    
       </ScrollView>

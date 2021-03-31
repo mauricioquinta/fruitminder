@@ -15,7 +15,8 @@ const { width, height } = Dimensions.get("screen");
 
 class Register extends React.Component {
     render() {
-	const { navigation } = this.props;
+	 const { navigation } = this.props;
+	
     return (
       <Block flex middle>
         <StatusBar hidden />
@@ -35,7 +36,7 @@ class Register extends React.Component {
 		  </Block>
 		  <Block style={styles.subTitle}>
                     <Text color="black" size={16}>
-		      Create an Account: General Info
+		      Lets name your orchard and give it a picture
                     </Text>
                   </Block>
 		</Block>
@@ -51,31 +52,51 @@ class Register extends React.Component {
                     enabled
                     >
 		    
+		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+		      <Block style={styles.subTitle}>
+			<Text color="black" size={16}>
+			  What is the name of your Orchard?
+			</Text>
+                      </Block>
+                      <Input
+                        borderless
+                        placeholder="Name of Orchard"
+                        iconContent={
+				<Icon
+				      size={16}
+				      color={argonTheme.COLORS.ICON}
+				      name="pencil"
+				      family="ArgonExtra"
+				      style={styles.inputIcons}
+				      />
+				}
+				/>
+                    </Block>
 
-		    <Block center>
-                      <Button
-			style={styles.button}
-			color="secondary"
-			onPress={() => navigation.navigate("newOrchard")}
-			textStyle={{ color: argonTheme.COLORS.BLACK }}
-			>
-			Create New Orchard
-                      </Button>
-		      <Button
-			style={styles.button}
-			color="secondary"
-			onPress={() => navigation.navigate("Login")}
-			textStyle={{ color: argonTheme.COLORS.BLACK }}
-			>
-			Join Existing Orchard
-                      </Button>
-		    </Block>
-	
+		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+		      <Block style={styles.subTitle}>
+			<Text color="black" size={16}>
+			  Upload a Photo or Logo of your Orchard
+			</Text>
+                      </Block>
+                      <Input
+                        borderless
+                        placeholder="Upload Photo or Logo"
+                        iconContent={
+				<Icon
+				      size={16}
+				      color={argonTheme.COLORS.ICON}
+				      name="image"
+				      family="ArgonExtra"
+				      style={styles.inputIcons}
+				      />
+				}
+				/>
+                    </Block>
+
 		    
-	
-		    
-		    
-		    <Block row  width={width * 0.75} style={{justifyContent: 'space-between'}}>
+		 
+                    <Block row  width={width * 0.75} style={{justifyContent: 'space-between'}}>
                       <Button color="secondary" style={styles.createButton}
 			      onPress={() => navigation.navigate("prev")}
 			      >
@@ -91,7 +112,6 @@ class Register extends React.Component {
                         </Text>
                       </Button>
                     </Block>
-	    
 
 		    
                   </KeyboardAvoidingView>
@@ -153,8 +173,8 @@ const styles = StyleSheet.create({
     paddingBottom: 30
   },
   createButton: {
-      width: "54%",
-      marginTop:475
+    width: "40%",
+    marginTop: 475
   },
   title: {
       marginTop:5
@@ -167,19 +187,7 @@ const styles = StyleSheet.create({
       position: "relative",
       bottom: theme.SIZES.BASE,
       zIndex: 2,
-  },
-  button: {
-	width: width - theme.SIZES.BASE * 4,
-	height: theme.SIZES.BASE * 3,
-	shadowRadius: 0,
-	shadowOpacity: 0
-  },
-    navContainer: {
-	flex: 1,
-	flexDirection: 'row',
-	alignItems: 'center',
-	justifyContent: 'center',
-    }
+  }
   
 });
 

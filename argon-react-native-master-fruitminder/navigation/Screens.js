@@ -19,6 +19,9 @@ import Articles from "../screens/Articles";
 import newAccount_1 from "../screens/newAccount_1"
 import newAccount_2 from "../screens/newAccount_2"
 import todoTest from "../screens/todoTest"
+import newOrchard_1 from "../screens/newOrchard_1"
+import newOrchard_2 from "../screens/newOrchard_2"
+import joinOrchard_1 from "../screens/joinOrchard_1"
 // drawer
 import CustomDrawerContent from "./Menu";
 
@@ -181,6 +184,10 @@ function HomeStack(props) {
   );
 }
 
+
+
+
+
 export default function OnboardingStack(props) {
   return (
     <Stack.Navigator mode="card" headerMode="none">
@@ -212,7 +219,7 @@ function OnboardingPickStack(props) {
     />
     
     <Stack.Screen name="App" component={AppStack} />
-    <Stack.Screen name="Login" component={Register} />
+    <Stack.Screen name="Login" component={LoginPage} />
     <Stack.Screen name="newUser" component={CreateNewAccount_1} />
     <Stack.Screen name="todoTest" component={todoTest} />
 	  
@@ -221,6 +228,42 @@ function OnboardingPickStack(props) {
   );
 }
 
+
+function LoginPage(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="login"
+        component={Register}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      
+      <Stack.Screen name="joinOrchard" component={JoinOrchard_1} />
+      
+    </Stack.Navigator>
+  );
+}
+
+function JoinOrchard_1(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="joinOrchard_1"
+        component={joinOrchard_1}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      
+      
+      <Stack.Screen name="prev" component={LoginPage} />
+      <Stack.Screen name="next" component={Home} />
+    
+    </Stack.Navigator>
+  );
+}
 
 function CreateNewAccount_1(props) {
   return (
@@ -233,13 +276,71 @@ function CreateNewAccount_1(props) {
         }}
 	/>
       
-    <Stack.Screen name="App" component={AppStack} />
-    <Stack.Screen name="prev" component={OnboardingPickStack} />
-    <Stack.Screen name="next" component={newAccount_2} />
+      
+      <Stack.Screen name="prev" component={OnboardingPickStack} />
+      <Stack.Screen name="next" component={CreateNewAccount_2} />
     
     </Stack.Navigator>
   );
 }
+
+function CreateNewAccount_2(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="newUser_2"
+        component={newAccount_2}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="Login" component={LoginPage} />
+      <Stack.Screen name="newOrchard" component={CreateNewOrchard_1} />
+      <Stack.Screen name="prev" component={CreateNewAccount_1} />
+      <Stack.Screen name="next" component={CreateNewOrchard_1} />
+    
+    </Stack.Navigator>
+  );
+}
+
+
+function CreateNewOrchard_1(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="newOrchard"
+        component={newOrchard_1}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="prev" component={CreateNewAccount_2} />
+      <Stack.Screen name="next" component={CreateNewOrchard_2} />
+    
+    </Stack.Navigator>
+  );
+}
+
+
+function CreateNewOrchard_2(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="newOrchard_2"
+        component={newOrchard_2}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="prev" component={CreateNewOrchard_1} />
+      <Stack.Screen name="next" component={Home} />
+    
+    </Stack.Navigator>
+  );
+}
+
+
+
 
 
 function AppStack(props) {

@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { Block, Checkbox, Text, theme } from "galio-framework";
 
-import { Button, Icon, Input } from "../components";
+import { Button, Icon, Input, Select } from "../components";
 import { Images, argonTheme } from "../constants";
 
 const { width, height } = Dimensions.get("screen");
@@ -36,14 +36,20 @@ class Register extends React.Component {
 		  </Block>
 		  <Block style={styles.subTitle}>
                     <Text color="black" size={16}>
-		      Lets grab some details for your orchard! 
+		      Lets grab some details on the type of fruit trees and methods of growing 
                     </Text>
                   </Block>
 		</Block>
 	      </Block>
 	    
             <Block style={styles.registerContainer}>
-	      
+
+	       <Select
+			defaultIndex={1}
+			options={[1, 2, 3, 4, 5]}
+			style={styles.shadow}
+			/>
+		      
 		
                 <Block flex center>
                   <KeyboardAvoidingView
@@ -55,40 +61,100 @@ class Register extends React.Component {
 		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
 		      <Block style={styles.subTitle}>
 			<Text color="black" size={16}>
-			 Where is your orchard located? 
+			  Orchard/Farm Number
 			</Text>
                       </Block>
 
-		      <Input
-                        borderless
-                        placeholder="Find your farm via GPS Location"
-                        iconContent={
-				<Icon
-				      size={16}
-				      color={argonTheme.COLORS.ICON}
-				      name="pencil"
-				      family="ArgonExtra"
-				      style={styles.inputIcons}
-				      />
-				}
-				/>
-		      <Input
-                        borderless
-                        placeholder="Manually Enter Details "
-                        iconContent={
-				<Icon
-				      size={16}
-				      color={argonTheme.COLORS.ICON}
-				      name="pencil"
-				      family="ArgonExtra"
-				      style={styles.inputIcons}
-				      />
-				}
-				/>
+		      
+		     
 		      
                     </Block>
 
-		  
+		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+		      <Block style={styles.subTitle}>
+			<Text color="black" size={16}>
+			  Street/Road/Highway
+			</Text>
+                      </Block>
+                      <Input
+                        borderless
+                        placeholder="street name"
+                        iconContent={
+				<Icon
+				      size={16}
+				      color={argonTheme.COLORS.ICON}
+				      name="pencil"
+				      family="ArgonExtra"
+				      style={styles.inputIcons}
+				      />
+				}
+				/>
+                    </Block>
+
+		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+		      <Block style={styles.subTitle}>
+			<Text color="black" size={16}>
+			  Suburb
+			</Text>
+                      </Block>
+                      <Input
+                        borderless
+                        placeholder="suburb"
+                        iconContent={
+				<Icon
+				      size={16}
+				      color={argonTheme.COLORS.ICON}
+				      name="pencil"
+				      family="ArgonExtra"
+				      style={styles.inputIcons}
+				      />
+				}
+				/>
+                    </Block>
+
+
+		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+		      <Block style={styles.subTitle}>
+			<Text color="black" size={16}>
+			  City/Town
+			</Text>
+                      </Block>
+                      <Input
+                        borderless
+                        placeholder="city town"
+                        iconContent={
+				<Icon
+				      size={16}
+				      color={argonTheme.COLORS.ICON}
+				      name="pencil"
+				      family="ArgonExtra"
+				      style={styles.inputIcons}
+				      />
+				}
+				/>
+                    </Block>
+
+		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+		      <Block style={styles.subTitle}>
+			<Text color="black" size={16}>
+			  Country
+			</Text>
+                      </Block>
+                      <Input
+                        borderless
+                        placeholder="country"
+                        iconContent={
+				<Icon
+				      size={16}
+				      color={argonTheme.COLORS.ICON}
+				      name="pencil"
+				      family="ArgonExtra"
+				      style={styles.inputIcons}
+				      />
+				}
+				/>
+                    </Block>
+
 		    
 		 
                     <Block row  width={width * 0.75} style={{justifyContent: 'space-between'}}>
@@ -169,7 +235,7 @@ const styles = StyleSheet.create({
   },
   createButton: {
     width: "40%",
-    marginTop: 400
+    marginTop: 25
   },
   title: {
       marginTop:5

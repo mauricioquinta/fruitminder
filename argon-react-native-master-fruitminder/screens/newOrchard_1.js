@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
   },
   createButton: {
     width: "40%",
-    marginTop: 475
+    marginTop: 400
   },
   title: {
       marginTop:5

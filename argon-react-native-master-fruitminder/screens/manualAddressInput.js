@@ -36,7 +36,7 @@ class Register extends React.Component {
 		  </Block>
 		  <Block style={styles.subTitle}>
                     <Text color="black" size={16}>
-		      Lets grab some details for your orchard! 
+		      Input the Address of your Orchard
                     </Text>
                   </Block>
 		</Block>
@@ -55,13 +55,12 @@ class Register extends React.Component {
 		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
 		      <Block style={styles.subTitle}>
 			<Text color="black" size={16}>
-			 Where is your orchard located? 
+			  Orchard/Farm Number
 			</Text>
                       </Block>
-
-		      <Input
+                      <Input
                         borderless
-                        placeholder="Find your farm via GPS Location"
+                        placeholder="#######"
                         iconContent={
 				<Icon
 				      size={16}
@@ -72,23 +71,93 @@ class Register extends React.Component {
 				      />
 				}
 				/>
-		      <Input
-                        borderless
-                        placeholder="Manually Enter Details "
-                        iconContent={
-				<Icon
-				      size={16}
-				      color={argonTheme.COLORS.ICON}
-				      name="pencil"
-				      family="ArgonExtra"
-				      style={styles.inputIcons}
-				      />
-				}
-				/>
-		      
                     </Block>
 
-		  
+		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+		      <Block style={styles.subTitle}>
+			<Text color="black" size={16}>
+			  Street/Road/Highway
+			</Text>
+                      </Block>
+                      <Input
+                        borderless
+                        placeholder="street name"
+                        iconContent={
+				<Icon
+				      size={16}
+				      color={argonTheme.COLORS.ICON}
+				      name="pencil"
+				      family="ArgonExtra"
+				      style={styles.inputIcons}
+				      />
+				}
+				/>
+                    </Block>
+
+		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+		      <Block style={styles.subTitle}>
+			<Text color="black" size={16}>
+			  Suburb
+			</Text>
+                      </Block>
+                      <Input
+                        borderless
+                        placeholder="suburb"
+                        iconContent={
+				<Icon
+				      size={16}
+				      color={argonTheme.COLORS.ICON}
+				      name="pencil"
+				      family="ArgonExtra"
+				      style={styles.inputIcons}
+				      />
+				}
+				/>
+                    </Block>
+
+
+		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+		      <Block style={styles.subTitle}>
+			<Text color="black" size={16}>
+			  City/Town
+			</Text>
+                      </Block>
+                      <Input
+                        borderless
+                        placeholder="city town"
+                        iconContent={
+				<Icon
+				      size={16}
+				      color={argonTheme.COLORS.ICON}
+				      name="pencil"
+				      family="ArgonExtra"
+				      style={styles.inputIcons}
+				      />
+				}
+				/>
+                    </Block>
+
+		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+		      <Block style={styles.subTitle}>
+			<Text color="black" size={16}>
+			  Country
+			</Text>
+                      </Block>
+                      <Input
+                        borderless
+                        placeholder="country"
+                        iconContent={
+				<Icon
+				      size={16}
+				      color={argonTheme.COLORS.ICON}
+				      name="pencil"
+				      family="ArgonExtra"
+				      style={styles.inputIcons}
+				      />
+				}
+				/>
+                    </Block>
+
 		    
 		 
                     <Block row  width={width * 0.75} style={{justifyContent: 'space-between'}}>
@@ -169,7 +238,7 @@ const styles = StyleSheet.create({
   },
   createButton: {
     width: "40%",
-    marginTop: 400
+    marginTop: 30
   },
   title: {
       marginTop:5

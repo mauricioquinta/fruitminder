@@ -22,6 +22,8 @@ import todoTest from "../screens/todoTest"
 import newOrchard_1 from "../screens/newOrchard_1"
 import newOrchard_2 from "../screens/newOrchard_2"
 import joinOrchard_1 from "../screens/joinOrchard_1"
+import addressIn from "../screens/manualAddressInput"
+import treeSelect from "../screens/fruitTreeSelection.js"
 // drawer
 import CustomDrawerContent from "./Menu";
 
@@ -333,11 +335,46 @@ function CreateNewOrchard_2(props) {
         }}
 	/>
       <Stack.Screen name="prev" component={CreateNewOrchard_1} />
-      <Stack.Screen name="next" component={Home} />
+      <Stack.Screen name="next" component={ManualAddress} />
     
     </Stack.Navigator>
   );
 }
+
+function ManualAddress(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="enterAddress"
+        component={addressIn}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="prev" component={CreateNewOrchard_2} />
+      <Stack.Screen name="next" component={TreeFruitSelect} />
+    
+    </Stack.Navigator>
+  );
+}
+
+function TreeFruitSelect(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="selectTreeType"
+        component={treeSelect}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="prev" component={ManualAddress} />
+      <Stack.Screen name="next" component={Home} />
+    x
+    </Stack.Navigator>
+  );
+}
+
 
 
 

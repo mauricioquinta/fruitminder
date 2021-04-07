@@ -1,21 +1,24 @@
-import React from "react";
+import React,{useState} from "react";
 import {
   StyleSheet,
   ImageBackground,
   Dimensions,
   StatusBar,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
+  
 } from "react-native";
 import { Block, Checkbox, Text, theme } from "galio-framework";
 
 import { Button, Icon, Input, Select } from "../components";
 import { Images, argonTheme } from "../constants";
+import ModalDropdown from 'react-native-modal-dropdown';
+
 
 const { width, height } = Dimensions.get("screen");
 
 class Register extends React.Component {
     render() {
-	 const { navigation } = this.props;
+	const { navigation } = this.props;
 	
     return (
       <Block flex middle>
@@ -44,12 +47,29 @@ class Register extends React.Component {
 	    
             <Block style={styles.registerContainer}>
 
-	       <Select
-			defaultIndex={1}
-			options={[1, 2, 3, 4, 5]}
-			style={styles.shadow}
-			/>
-		      
+	      <Block row space="evenly">
+		<Block flex left  style={{marginTop: 8}}>
+		  
+		  
+		  <ModalDropdown style={styles.selectButton}
+		    options={['option 1', 'option 2']}>
+		    <Text color="white" >select fruit </Text>
+		  </ModalDropdown>
+
+		  
+		</Block>
+		<Block flex center>
+		  <Button small center color="default" style={styles.optionsButton}>
+                    DELETE
+		  </Button>
+		</Block>
+		<Block flex={1.25} right>
+		  <Button center color="default" style={styles.optionsButton}>
+                    SAVE FOR LATER
+		  </Button>
+		</Block>
+	      </Block>
+	      
 		
                 <Block flex center>
                   <KeyboardAvoidingView
@@ -248,7 +268,23 @@ const styles = StyleSheet.create({
       position: "relative",
       bottom: theme.SIZES.BASE,
       zIndex: 2,
-  }
+  },
+  optionsButton: {
+      width: "auto",
+      height: 34,
+      paddingHorizontal: theme.SIZES.BASE,
+      paddingVertical: 10
+  },
+    selectButton: {
+	width: "auto",
+	backgroundColor: argonTheme.COLORS.DEFAULT,
+	height: 34,
+	paddingHorizontal: theme.SIZES.BASE,
+	paddingVertical: 10,
+	borderRadius:4
+	
+    }
+	
   
 });
 

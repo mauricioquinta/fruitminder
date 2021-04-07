@@ -369,7 +369,7 @@ function TreeFruitSelect(props) {
         }}
 	/>
       <Stack.Screen name="prev" component={ManualAddress} />
-      <Stack.Screen name="next" component={Home} />
+      <Stack.Screen name="next" component={Elements} />
     
     </Stack.Navigator>
   );

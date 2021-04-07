@@ -10,11 +10,20 @@ import { Block } from "galio-framework";
 // screens
 import Home from "../screens/Home";
 import Onboarding from "../screens/Onboarding";
+import OnboardingPick from "../screens/OnboardingPick"
 import Pro from "../screens/Pro";
 import Profile from "../screens/Profile";
 import Register from "../screens/Register";
 import Elements from "../screens/Elements";
 import Articles from "../screens/Articles";
+import newAccount_1 from "../screens/newAccount_1"
+import newAccount_2 from "../screens/newAccount_2"
+import todoTest from "../screens/todoTest"
+import newOrchard_1 from "../screens/newOrchard_1"
+import newOrchard_2 from "../screens/newOrchard_2"
+import joinOrchard_1 from "../screens/joinOrchard_1"
+import addressIn from "../screens/manualAddressInput"
+import treeSelect from "../screens/fruitTreeSelection.js"
 // drawer
 import CustomDrawerContent from "./Menu";
 
@@ -38,7 +47,7 @@ function ElementsStack(props) {
           header: ({ navigation, scene }) => (
             <Header title="Elements" navigation={navigation} scene={scene} />
           ),
-          cardStyle: { backgroundColor: "#F8F9FE" }
+          cardStyle: { backgroundColor: "blue" }
         }}
       />
             <Stack.Screen
@@ -75,7 +84,7 @@ function ArticlesStack(props) {
           cardStyle: { backgroundColor: "#F8F9FE" }
         }}
       />
-            <Stack.Screen
+      <Stack.Screen
         name="Pro"
         component={Pro}
         options={{
@@ -177,6 +186,10 @@ function HomeStack(props) {
   );
 }
 
+
+
+
+
 export default function OnboardingStack(props) {
   return (
     <Stack.Navigator mode="card" headerMode="none">
@@ -186,11 +199,186 @@ export default function OnboardingStack(props) {
         option={{
           headerTransparent: true
         }}
-      />
-      <Stack.Screen name="App" component={AppStack} />
+    />
+    
+    <Stack.Screen name="App" component={AppStack} />
+    <Stack.Screen name="OnboardingPick" component={OnboardingPickStack} />
+    
     </Stack.Navigator>
   );
 }
+
+
+function OnboardingPickStack(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="OnboardingPick"
+        component={OnboardingPick}
+        option={{
+          headerTransparent: true
+        }}
+    />
+    
+    <Stack.Screen name="App" component={AppStack} />
+    <Stack.Screen name="Login" component={LoginPage} />
+    <Stack.Screen name="newUser" component={CreateNewAccount_1} />
+    <Stack.Screen name="todoTest" component={todoTest} />
+	  
+    
+    </Stack.Navigator>
+  );
+}
+
+
+function LoginPage(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="login"
+        component={Register}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      
+      <Stack.Screen name="joinOrchard" component={JoinOrchard_1} />
+      
+    </Stack.Navigator>
+  );
+}
+
+function JoinOrchard_1(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="joinOrchard_1"
+        component={joinOrchard_1}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      
+      
+      <Stack.Screen name="prev" component={LoginPage} />
+      <Stack.Screen name="next" component={Home} />
+    
+    </Stack.Navigator>
+  );
+}
+
+function CreateNewAccount_1(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="newUser_1"
+        component={newAccount_1}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      
+      
+      <Stack.Screen name="prev" component={OnboardingPickStack} />
+      <Stack.Screen name="next" component={CreateNewAccount_2} />
+    
+    </Stack.Navigator>
+  );
+}
+
+function CreateNewAccount_2(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="newUser_2"
+        component={newAccount_2}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="Login" component={LoginPage} />
+      <Stack.Screen name="newOrchard" component={CreateNewOrchard_1} />
+      <Stack.Screen name="prev" component={CreateNewAccount_1} />
+      <Stack.Screen name="next" component={CreateNewOrchard_1} />
+    
+    </Stack.Navigator>
+  );
+}
+
+
+function CreateNewOrchard_1(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="newOrchard"
+        component={newOrchard_1}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="prev" component={CreateNewAccount_2} />
+      <Stack.Screen name="next" component={CreateNewOrchard_2} />
+    
+    </Stack.Navigator>
+  );
+}
+
+
+function CreateNewOrchard_2(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="newOrchard_2"
+        component={newOrchard_2}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="prev" component={CreateNewOrchard_1} />
+      <Stack.Screen name="next" component={ManualAddress} />
+    
+    </Stack.Navigator>
+  );
+}
+
+function ManualAddress(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="enterAddress"
+        component={addressIn}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="prev" component={CreateNewOrchard_2} />
+      <Stack.Screen name="next" component={TreeFruitSelect} />
+    
+    </Stack.Navigator>
+  );
+}
+
+function TreeFruitSelect(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="selectTreeType"
+        component={treeSelect}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="prev" component={ManualAddress} />
+      <Stack.Screen name="next" component={Elements} />
+    
+    </Stack.Navigator>
+  );
+}
+
+
+
+
+
 
 function AppStack(props) {
   return (
@@ -231,4 +419,8 @@ function AppStack(props) {
     </Drawer.Navigator>
   );
 }
+
+
+
+
 

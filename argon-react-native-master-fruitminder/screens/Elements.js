@@ -60,12 +60,14 @@ class Elements extends React.Component {
             <Button color="error" style={styles.button}>
               ERROR
             </Button>
-          </Block>
+            </Block>
+
+	
           <Block row space="evenly">
             <Block flex left style={{marginTop: 8}}>
-              <Select
+              <Select 
                 defaultIndex={1}
-                options={["01", "02", "03", "04", "05"]}
+                options={["opt1", "02", "03", "04", "05"]}
               />
             </Block>
             <Block flex center>
@@ -78,6 +80,7 @@ class Elements extends React.Component {
                 SAVE FOR LATER
               </Button>
             </Block>
+	    
           </Block>
         </Block>
       </Block>

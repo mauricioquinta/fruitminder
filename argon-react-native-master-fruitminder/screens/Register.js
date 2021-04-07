@@ -14,7 +14,8 @@ import { Images, argonTheme } from "../constants";
 const { width, height } = Dimensions.get("screen");
 
 class Register extends React.Component {
-  render() {
+    render() {
+	const { navigation } = this.props;
     return (
       <Block flex middle>
         <StatusBar hidden />
@@ -24,43 +25,20 @@ class Register extends React.Component {
         >
           <Block flex middle>
             <Block style={styles.registerContainer}>
-              <Block flex={0.25} middle style={styles.socialConnect}>
-                <Text color="#8898AA" size={12}>
-                  Sign up with
-                </Text>
-                <Block row style={{ marginTop: theme.SIZES.BASE }}>
-                  <Button style={{ ...styles.socialButtons, marginRight: 30 }}>
-                    <Block row>
-                      <Icon
-                        name="logo-github"
-                        family="Ionicon"
-                        size={14}
-                        color={"black"}
-                        style={{ marginTop: 2, marginRight: 5 }}
-                      />
-                      <Text style={styles.socialTextButtons}>GITHUB</Text>
+	      
+
+	      
+	      <Block flex space="between" style={styles.padded}>
+		<Block flex space="around" style={{ zIndex: 2 }}>
+                  <Block style={styles.title}>
+                    <Block>
+                      <Text color="black" size={60}>
+			Fruitminder
+                      </Text>
                     </Block>
-                  </Button>
-                  <Button style={styles.socialButtons}>
-                    <Block row>
-                      <Icon
-                        name="logo-google"
-                        family="Ionicon"
-                        size={14}
-                        color={"black"}
-                        style={{ marginTop: 2, marginRight: 5 }}
-                      />
-                      <Text style={styles.socialTextButtons}>GOOGLE</Text>
-                    </Block>
-                  </Button>
-                </Block>
-              </Block>
-              <Block flex>
-                <Block flex={0.17} middle>
-                  <Text color="#8898AA" size={12}>
-                    Or sign up the classic way
-                  </Text>
-                </Block>
+		  </Block>
+		</Block>
+		
                 <Block flex center>
                   <KeyboardAvoidingView
                     style={{ flex: 1 }}
@@ -70,7 +48,7 @@ class Register extends React.Component {
                     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
                       <Input
                         borderless
-                        placeholder="Name"
+                        placeholder="UserName"
                         iconContent={
                           <Icon
                             size={16}
@@ -82,21 +60,7 @@ class Register extends React.Component {
                         }
                       />
                     </Block>
-                    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
-                      <Input
-                        borderless
-                        placeholder="Email"
-                        iconContent={
-                          <Icon
-                            size={16}
-                            color={argonTheme.COLORS.ICON}
-                            name="ic_mail_24px"
-                            family="ArgonExtra"
-                            style={styles.inputIcons}
-                          />
-                        }
-                      />
-                    </Block>
+                   
                     <Block width={width * 0.8}>
                       <Input
                         password
@@ -132,9 +96,9 @@ class Register extends React.Component {
                       />
                       <Button
                         style={{ width: 100 }}
-                        color="transparent"
+                        color="primary"
                         textStyle={{
-                          color: argonTheme.COLORS.PRIMARY,
+                          color: argonTheme.COLORS.BLACK,
                           fontSize: 14
                         }}
                       >
@@ -142,9 +106,10 @@ class Register extends React.Component {
                       </Button>
                     </Block>
                     <Block middle>
-                      <Button color="primary" style={styles.createButton}>
-                        <Text bold size={14} color={argonTheme.COLORS.WHITE}>
-                          CREATE ACCOUNT
+		      <Button color="secondary" style={styles.createButton}
+			      onPress={() => navigation.navigate("joinOrchard")}>
+                        <Text bold size={14} color={argonTheme.COLORS.BLACK}>
+                          LOGIN
                         </Text>
                       </Button>
                     </Block>
@@ -209,7 +174,20 @@ const styles = StyleSheet.create({
   createButton: {
     width: width * 0.5,
     marginTop: 25
+  },
+  title: {
+      marginTop:'-5%'
+  },
+  subTitle: {
+      marginTop: 20
+  },
+  padded: {
+      paddingHorizontal: theme.SIZES.BASE * 2,
+      position: "relative",
+      bottom: theme.SIZES.BASE,
+      zIndex: 2,
   }
+  
 });
 
 export default Register;

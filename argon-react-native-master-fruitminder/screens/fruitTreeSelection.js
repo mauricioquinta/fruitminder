@@ -4,7 +4,8 @@ import {
   ImageBackground,
   Dimensions,
   StatusBar,
-  KeyboardAvoidingView,
+    KeyboardAvoidingView,
+    View
   
 } from "react-native";
 import { Block, Checkbox, Text, theme } from "galio-framework";
@@ -45,31 +46,7 @@ class Register extends React.Component {
 		</Block>
 	      </Block>
 	    
-            <Block style={styles.registerContainer}>
-
-	      <Block row space="evenly">
-		<Block flex left  style={{marginTop: 8}}>
-		  
-		  
-		  <ModalDropdown style={styles.selectButton}
-		    options={['option 1', 'option 2']}>
-		    <Text color="white" >select fruit </Text>
-		  </ModalDropdown>
-
-		  
-		</Block>
-		<Block flex center>
-		  <Button small center color="default" style={styles.optionsButton}>
-                    DELETE
-		  </Button>
-		</Block>
-		<Block flex={1.25} right>
-		  <Button center color="default" style={styles.optionsButton}>
-                    SAVE FOR LATER
-		  </Button>
-		</Block>
-	      </Block>
-	      
+            <Block style={styles.registerContainer}>	      
 		
                 <Block flex center>
                   <KeyboardAvoidingView
@@ -77,103 +54,132 @@ class Register extends React.Component {
                     behavior="padding"
                     enabled
                     >
+
 		    
 		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
 		      <Block style={styles.subTitle}>
 			<Text color="black" size={16}>
-			  Orchard/Farm Number
+			  Category
 			</Text>
-                      </Block>
 
-		      
-		     
-		      
-                    </Block>
+			  <ModalDropdown style={styles.selectButton}
+					 options={['Fruit Orchard', 'Nut Orchard', 'Vineyard']}
+					 >
+			    
+			    <View style={{flexDirection:'row', justifyContent : 'space-between'}}>
 
-		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
-		      <Block style={styles.subTitle}>
-			<Text color="black" size={16}>
-			  Street/Road/Highway
-			</Text>
-                      </Block>
-                      <Input
-                        borderless
-                        placeholder="street name"
-                        iconContent={
-				<Icon
-				      size={16}
-				      color={argonTheme.COLORS.ICON}
-				      name="pencil"
-				      family="ArgonExtra"
-				      style={styles.inputIcons}
-				      />
-				}
+			      <Text style={{alignSelf: 'flex-start'}} color="grey">select category </Text>
+			      
+			      <Icon
+				size={16}
+				color={argonTheme.COLORS.ICON}
+				name="nav-down"
+				family="ArgonExtra"
+				style={styles.inputIcons}
 				/>
-                    </Block>
+			     
+			    </View>
+			  </ModalDropdown>
 
-		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
-		      <Block style={styles.subTitle}>
-			<Text color="black" size={16}>
-			  Suburb
-			</Text>
                       </Block>
-                      <Input
-                        borderless
-                        placeholder="suburb"
-                        iconContent={
-				<Icon
-				      size={16}
-				      color={argonTheme.COLORS.ICON}
-				      name="pencil"
-				      family="ArgonExtra"
-				      style={styles.inputIcons}
-				      />
-				}
-				/>
                     </Block>
 
 
 		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
 		      <Block style={styles.subTitle}>
 			<Text color="black" size={16}>
-			  City/Town
+			  Fruit Type
 			</Text>
-                      </Block>
-                      <Input
-                        borderless
-                        placeholder="city town"
-                        iconContent={
-				<Icon
-				      size={16}
-				      color={argonTheme.COLORS.ICON}
-				      name="pencil"
-				      family="ArgonExtra"
-				      style={styles.inputIcons}
-				      />
-				}
+
+			  <ModalDropdown style={styles.selectButton}
+					 options={['option', 'option','option','option']}
+					 >
+			    
+			    <View style={{flexDirection:'row', justifyContent : 'space-between'}}>
+
+			      <Text style={{alignSelf: 'flex-start'}} color="grey">select fruit type </Text>
+			      
+			      <Icon
+				size={16}
+				color={argonTheme.COLORS.ICON}
+				name="nav-down"
+				family="ArgonExtra"
+				style={styles.inputIcons}
 				/>
+			     
+			    </View>
+			  </ModalDropdown>
+
+                      </Block>
+                    </Block>
+		    
+
+		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+		      <Block style={styles.subTitle}>
+			<Text color="black" size={16}>
+			  Tree Type
+			</Text>
+
+			  <ModalDropdown style={styles.selectButton}
+					 options={['treeType1', 'treeType2','treeType3']}
+					 >
+			    
+			    <View style={{flexDirection:'row', justifyContent : 'space-between'}}>
+
+			      <Text style={{alignSelf: 'flex-start'}} color="grey">select tree type </Text>
+			      
+			      <Icon
+				size={16}
+				color={argonTheme.COLORS.ICON}
+				name="nav-down"
+				family="ArgonExtra"
+				style={styles.inputIcons}
+				/>
+			     
+			    </View>
+			  </ModalDropdown>
+
+                      </Block>
                     </Block>
 
 		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
 		      <Block style={styles.subTitle}>
 			<Text color="black" size={16}>
-			  Country
+			  Growing Strategy
 			</Text>
-                      </Block>
-                      <Input
-                        borderless
-                        placeholder="country"
-                        iconContent={
-				<Icon
-				      size={16}
-				      color={argonTheme.COLORS.ICON}
-				      name="pencil"
-				      family="ArgonExtra"
-				      style={styles.inputIcons}
-				      />
-				}
+
+			  <ModalDropdown style={styles.selectButton}
+					 options={['option', 'option']}
+					 >
+			    
+			    <View style={{flexDirection:'row', justifyContent : 'space-between'}}>
+
+			      <Text style={{alignSelf: 'flex-start'}} color="grey">select growing startegy </Text>
+			      
+			      <Icon
+				size={16}
+				color={argonTheme.COLORS.ICON}
+				name="nav-down"
+				family="ArgonExtra"
+				style={styles.inputIcons}
 				/>
+			     
+			    </View>
+			  </ModalDropdown>
+
+                      </Block>
                     </Block>
+
+
+		    
+
+		    
+
+		   
+
+		    
+
+		    
 
 		    
 		 
@@ -246,7 +252,7 @@ const styles = StyleSheet.create({
     fontSize: 14
   },
   inputIcons: {
-    marginRight: 12
+      marginRight: 12, 
   },
   passwordCheck: {
     paddingLeft: 15,
@@ -255,7 +261,7 @@ const styles = StyleSheet.create({
   },
   createButton: {
     width: "40%",
-    marginTop: 25
+    marginTop: 250
   },
   title: {
       marginTop:5
@@ -277,11 +283,20 @@ const styles = StyleSheet.create({
   },
     selectButton: {
 	width: "auto",
-	backgroundColor: argonTheme.COLORS.DEFAULT,
-	height: 34,
+	backgroundColor: "#fff",
+	height: 40,
 	paddingHorizontal: theme.SIZES.BASE,
 	paddingVertical: 10,
-	borderRadius:4
+	borderRadius:4,
+	shadowColor: argonTheme.COLORS.BLACK,
+	shadowOffset: {
+	    width: 0,
+	    height: 4
+	},
+	shadowRadius: 8,
+	shadowOpacity: 0.1,
+	elevation: 1
+	
 	
     }
 	

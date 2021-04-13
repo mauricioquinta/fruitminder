@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Argon FREE React Native",
-    "slug": "argon-free-react-native",
+    "name": "Fruitminder Project",
+    "slug": "fruitminder-orchard-management",
     "privacy": "public",
     "sdkVersion": "39.0.0",
     "platforms": [
@@ -23,8 +23,9 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
-    },
+	"supportsTablet": true,
+	"bundleIdentifier": "com.forrestlodge.fruitminder"
+      },
     "description": "Argon React Native, based on Argon Design System. Coded by Creative Tim"
   }
 }

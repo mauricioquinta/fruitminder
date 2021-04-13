@@ -4,7 +4,8 @@ import {
   ImageBackground,
   Dimensions,
   StatusBar,
-  KeyboardAvoidingView
+    KeyboardAvoidingView,
+    ScrollView
 } from "react-native";
 import { Block, Checkbox, Text, theme } from "galio-framework";
 
@@ -17,7 +18,8 @@ class Register extends React.Component {
     render() {
 	 const { navigation } = this.props;
 	
-    return (
+	return (
+	<ScrollView>
       <Block flex middle>
         <StatusBar hidden />
         <ImageBackground
@@ -117,6 +119,7 @@ class Register extends React.Component {
           </Block>
         </ImageBackground>
       </Block>
+	    </ScrollView>
     );
   }
 }
@@ -170,7 +173,7 @@ const styles = StyleSheet.create({
   },
   createButton: {
     width: "40%",
-    marginTop: 475
+    marginTop: 25
   },
   title: {
       marginTop:5

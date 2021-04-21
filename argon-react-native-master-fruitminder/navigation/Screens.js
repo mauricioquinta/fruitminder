@@ -23,7 +23,10 @@ import newOrchard_1 from "../screens/newOrchard_1"
 import newOrchard_2 from "../screens/newOrchard_2"
 import joinOrchard_1 from "../screens/joinOrchard_1"
 import addressIn from "../screens/manualAddressInput"
-import treeSelect from "../screens/fruitTreeSelection.js"
+import treeSelect from "../screens/fruitTreeSelection"
+import orchRowDetails from "../screens/orchRowDetails"
+import newOrchDetails from "../screens/newOrchDetails"
+
 // drawer
 import CustomDrawerContent from "./Menu";
 
@@ -369,7 +372,41 @@ function TreeFruitSelect(props) {
         }}
 	/>
       <Stack.Screen name="prev" component={ManualAddress} />
-      <Stack.Screen name="next" component={Elements} />
+      <Stack.Screen name="next" component={OrchRowDetails} />
+    
+    </Stack.Navigator>
+  );
+}
+
+function OrchRowDetails(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="orchRowDetails"
+        component={orchRowDetails}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="prev" component={TreeFruitSelect} />
+      <Stack.Screen name="next" component={OrchardDetails} />
+    
+    </Stack.Navigator>
+  );
+}
+
+function OrchardDetails(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="orchardDetails"
+        component={newOrchDetails}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="prev" component={orchRowDetails} />
+      <Stack.Screen name="next" component={Home} />
     
     </Stack.Navigator>
   );

@@ -5,6 +5,7 @@ import { StyleSheet, Dimensions, Image, TouchableWithoutFeedback } from 'react-n
 import { Block, Text, theme } from 'galio-framework';
 
 import { argonTheme } from '../constants';
+const { width, height } = Dimensions.get("screen");
 
 
 class DetailCard extends React.Component {
@@ -21,27 +22,52 @@ class DetailCard extends React.Component {
       styles.shadow
     ];
 
-    return (
-	<Block row={horizontal} card flex style={cardContainer}>
+      return (
+
+	  <Block flex style={styles.container}>
+	    <Block row={horizontal} card flex style={cardContainer}>
+	      
+              
+	      <Block flex space="between" style={styles.cardDescription}>
+		<Text style={{paddingBottom: 10}}>
+		  <Text size={20} style={{fontWeight: 'bold'}}>Name:</Text>
+		  <Text size={20} style={styles.cardText}> {item.name}</Text>
+		</Text>
+		
+		<Text style={{paddingBottom: 10}}>
+		  <Text size={20} style={{fontWeight: 'bold'}}>Address:</Text>
+		  <Text size={20} style={styles.cardText}> {item.address}</Text>
+		</Text>
+		
+		<Text style={{paddingBottom: 10}}>
+		  <Text size={20} style={{fontWeight: 'bold'}}>Category:</Text>
+		  <Text size={20} style={styles.cardText}> {item.category}</Text>
+		</Text>
+		
+		<Text style={{paddingBottom: 10}}>
+		  <Text size={20} style={{fontWeight: 'bold'}}>Fruit Type:</Text>
+		  <Text size={20}> {item.fruitType}</Text>
+		</Text>
+		
+		<Text style={{paddingBottom: 10}}>
+		  <Text size={20} style={{fontWeight: 'bold'}}>Tree Variety:</Text>
+		  <Text size={20}> {item.treeVariety}</Text>
+		</Text>
+		
+		<Text style={{paddingBottom: 10}}>
+		  <Text size={20} style={{fontWeight: 'bold'}}>Growing Strategies:</Text>
+		  <Text size={20} style={styles.cardText}> {item.growingStrategies}</Text>
+		</Text>
+		
+		<Text style={{paddingBottom: 10}}>
+		  <Text size={20} style={{fontWeight: 'bold'}}> Further:</Text>
+		  <Text size={20} style={styles.cardText}> {item.further}</Text>
+		</Text>
+              </Block>
+	      
+	    </Block>
+	  </Block>
 	  
-          
-	  <Block flex space="between" style={styles.cardDescription}>
-            <Text size={14} style={styles.cardTitle}>Name: {item.name}</Text>
-	    
-            <Text size={14} style={styles.cardTitle}>Address: {item.name}</Text>
-	    
-            <Text size={14} style={styles.cardTitle}>Category: {item.category}</Text>
-	    
-            <Text size={14} style={styles.cardTitle}>Fruit Type: {item.fruitType}</Text>
-	    
-            <Text size={14} style={styles.cardTitle}>Tree Variety: {item.treeVariety}</Text>
-	    
-            <Text size={14} style={styles.cardTitle}>Growing Strategies: {item.growingStrategies}</Text>
-	    
-            <Text size={14} style={styles.cardTitle}>Further: {item.further}</Text>
-          </Block>
-	  
-	</Block>
     );
   }
 }
@@ -56,16 +82,15 @@ DetailCard.propTypes = {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: theme.COLORS.WHITE,
     marginVertical: theme.SIZES.BASE,
     borderWidth: 0,
     minHeight: 114,
     marginBottom: 16
   },
-  cardTitle: {
+  cardText: {
     flex: 1,
     flexWrap: 'wrap',
-    paddingBottom: 6
+    paddingBottom: 2
   },
   cardDescription: {
     padding: theme.SIZES.BASE / 2
@@ -93,12 +118,13 @@ const styles = StyleSheet.create({
   fullImage: {
     height: 215
   },
-  shadow: {
-    shadowColor: theme.COLORS.BLACK,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 4,
-    shadowOpacity: 0.1,
-    elevation: 2,
+    container: {
+	width: width * 0.9,
+    height: height * 0.78,
+    borderRadius: 4,
+    
+	marginTop:10,
+    overflow: "hidden"
   },
 });
 

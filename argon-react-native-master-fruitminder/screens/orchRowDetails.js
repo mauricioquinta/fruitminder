@@ -250,7 +250,7 @@ const styles = StyleSheet.create({
   },
   createButton: {
     width: "40%",
-    marginTop: 250
+    marginTop: 150
   },
   title: {
       marginTop:5

@@ -9,6 +9,9 @@ from .serializers import TodoSerializer
 from .serializers import TreeSerializer
 from .models import Todo
 from .models import Tree
+from .models import Orchard
+from .models import Row
+from .models import treeToRow
 
 # Create your views here.
 
@@ -20,4 +23,14 @@ class TreeView(viewsets.ModelViewSet):
     serializer_class = TreeSerializer
     queryset = Tree.objects.all()
 
+class OrchardView(viewsets.ModelViewSet):
+    serializer_class = OrchardSerializer
+    queryset = Orchard.objects.all()
 
+class RowView(viewsets.ModelViewSet):
+    serializer_class = RowSerializer
+    queryset = Row.objects.all()
+
+class TreeToRow(viewsets.ModelViewSet):
+    serializer_class = TreeToRowSerializer
+    queryset = treeToRow.objects.all()

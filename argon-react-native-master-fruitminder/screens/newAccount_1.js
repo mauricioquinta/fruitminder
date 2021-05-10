@@ -295,7 +295,7 @@ const styles = StyleSheet.create({
     marginTop: 40
   },
   title: {
-      marginTop:5
+      marginTop:50
   },
   subTitle: {
       marginTop: 5

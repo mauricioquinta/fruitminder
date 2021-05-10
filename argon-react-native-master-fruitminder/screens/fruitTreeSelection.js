@@ -23,7 +23,7 @@ class Register extends React.Component {
 	const { navigation } = this.props;
 	
 	return (
-	    <ScrollView contentContainerStyle={{ paddingBottom: 100 }}>
+	    <ScrollView contentContainerStyle={{ paddingBottom: 150 }}>
       <Block flex middle>
         <StatusBar hidden />
         <ImageBackground
@@ -33,7 +33,7 @@ class Register extends React.Component {
           <Block flex middle>
 
 	    <Block flex space="between" style={styles.padded}>
-	      <Block flex space="around" style={{ zIndex: 2 }}>
+	      <Block flex space="around" style={{ zIndex: 1 }}>
                 <Block style={styles.title}>
                   <Block>
                     <Text color="black" size={40}>
@@ -218,7 +218,7 @@ class Register extends React.Component {
 const styles = StyleSheet.create({
   registerContainer: {
     width: width * 0.9,
-    height: height * 0.60,
+    height: height * 0.50,
     backgroundColor: "#F4F5F7",
     borderRadius: 4,
     shadowColor: argonTheme.COLORS.BLACK,
@@ -276,6 +276,7 @@ const styles = StyleSheet.create({
       position: "relative",
       bottom: theme.SIZES.BASE,
       zIndex: 2,
+      paddingBottom:5
   },
   optionsButton: {
       width: "auto",

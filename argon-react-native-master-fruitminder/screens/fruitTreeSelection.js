@@ -23,7 +23,7 @@ class Register extends React.Component {
 	const { navigation } = this.props;
 	
 	return (
-	    <ScrollView>
+	    <ScrollView contentContainerStyle={{ paddingBottom: 100 }}>
       <Block flex middle>
         <StatusBar hidden />
         <ImageBackground
@@ -58,7 +58,7 @@ class Register extends React.Component {
                     >
 
 		    
-		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+		<Block width={width * 0.8} style={{ marginBottom: 15, marginTop:15 }}>
 		      <Block style={styles.subTitle}>
 			<Text color="black" size={16}>
 			  Category
@@ -218,7 +218,7 @@ class Register extends React.Component {
 const styles = StyleSheet.create({
   registerContainer: {
     width: width * 0.9,
-    height: height * 0.78,
+    height: height * 0.60,
     backgroundColor: "#F4F5F7",
     borderRadius: 4,
     shadowColor: argonTheme.COLORS.BLACK,
@@ -229,7 +229,6 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     shadowOpacity: 0.1,
     elevation: 1,
-    overflow: "hidden"
   },
   socialConnect: {
     backgroundColor: argonTheme.COLORS.WHITE,
@@ -264,7 +263,7 @@ const styles = StyleSheet.create({
   },
   createButton: {
     width: "40%",
-    marginTop: 250
+    marginTop: 100
   },
   title: {
       marginTop:5

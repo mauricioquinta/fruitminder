@@ -19,7 +19,7 @@ class Register extends React.Component {
 	 const { navigation } = this.props;
 	
 	return (
-	    <ScrollView>
+	    <ScrollView contentContainerStyle={{ paddingBottom: 100 }}>
       <Block flex middle>
         <StatusBar hidden />
         <ImageBackground
@@ -206,7 +206,6 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     shadowOpacity: 0.1,
     elevation: 1,
-    overflow: "hidden"
   },
   socialConnect: {
     backgroundColor: argonTheme.COLORS.WHITE,
@@ -241,7 +240,7 @@ const styles = StyleSheet.create({
   },
   createButton: {
     width: "40%",
-    marginTop: 30
+    marginTop: 50
   },
   title: {
       marginTop:5

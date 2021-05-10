@@ -76,7 +76,7 @@ class Register extends React.Component {
 		    
 	
 		    
-		    
+	    {/*
 		    <Block row  width={width * 0.75} style={{justifyContent: 'space-between'}}>
                       <Button color="secondary" style={styles.createButton}
 			      onPress={() => navigation.navigate("prev")}
@@ -93,7 +93,7 @@ class Register extends React.Component {
                         </Text>
                       </Button>
                     </Block>
-	    
+	     */}
 
 		    
                   </KeyboardAvoidingView>

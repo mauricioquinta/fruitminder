@@ -27,12 +27,12 @@ class Register extends React.Component {
 		  >
 		  <Block flex middle>
 		    <Block style={styles.registerContainer}>
-		      
-		      <Block flex space="between" style={styles.padded}>
+		<Block flex space="between" style={styles.padded}>
+		
 			<Block flex space="around" style={{ zIndex: 2 }}>
 			  <Block style={styles.title}>
 			    <Block>
-			      <Text color="black" size={60}>
+			      <Text color="black" size={55}>
 				Fruitminder
 			      </Text>
 			    </Block>
@@ -139,10 +139,10 @@ const styles = StyleSheet.create({
       width: 0,
       height: 4
     },
+      marginTop:'-15%',
     shadowRadius: 8,
     shadowOpacity: 0.1,
     elevation: 1,
-    overflow: "hidden"
   },
   socialConnect: {
     backgroundColor: argonTheme.COLORS.WHITE,
@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
   },
   createButton: {
     width: width * 0.5,
-    marginTop: 25
+    marginTop:40
   },
   title: {
       marginTop:'-5%'

@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import {
   StyleSheet,
   ImageBackground,
@@ -11,14 +11,24 @@ import { Block, Checkbox, Text, theme } from "galio-framework";
 
 import { Button, Icon, Input } from "../components";
 import { Images, argonTheme } from "../constants";
+import {  useNavigation } from '@react-navigation/native' // <-- import useNavigation hook
+
 
 const { width, height } = Dimensions.get("screen");
 
-class Register extends React.Component {
-    render() {
-	 const { navigation } = this.props;
+
+
+const  newOrchard = () => {     
+	
+	
+	
+
+    const [orchardName, setOrchardName] = useState();
+    const navigation = useNavigation() // <-- add this line
+    
 	
 	return (
+	    
 	    <ScrollView>
       <Block flex middle>
         <StatusBar hidden />
@@ -42,7 +52,8 @@ class Register extends React.Component {
                     </Text>
                   </Block>
 		</Block>
-	      </Block>
+		</Block>
+	
 	    
             <Block style={styles.registerContainer}>
 	      
@@ -72,6 +83,8 @@ class Register extends React.Component {
 				      style={styles.inputIcons}
 				      />
 				}
+			onChangeText={orchardName => setOrchardName(orchardName)}
+			defaultValue={orchardName}
 				/>
                     </Block>
 
@@ -107,7 +120,7 @@ class Register extends React.Component {
                         </Text>
                       </Button>
 		      <Button color="secondary" style={styles.createButton}
-			      onPress={() => navigation.navigate("next")}
+			      onPress={() => navigation.navigate("next", {orchName: orchardName})}
 			      >
                         <Text bold size={14} color={argonTheme.COLORS.BLACK}>
                           Next Step
@@ -125,8 +138,8 @@ class Register extends React.Component {
 		</Block>
 		</ScrollView>
     );
-  }
 }
+
 
 const styles = StyleSheet.create({
   registerContainer: {
@@ -194,4 +207,4 @@ const styles = StyleSheet.create({
   
 });
 
-export default Register;
+export default newOrchard;

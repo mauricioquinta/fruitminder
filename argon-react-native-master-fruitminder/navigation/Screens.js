@@ -26,6 +26,7 @@ import addressIn from "../screens/manualAddressInput"
 import treeSelect from "../screens/fruitTreeSelection"
 import orchRowDetails from "../screens/orchRowDetails"
 import newOrchDetails from "../screens/newOrchDetails"
+import orchardHome from "../screens/orchardHome"
 
 // drawer
 import CustomDrawerContent from "./Menu";
@@ -406,12 +407,30 @@ function OrchardDetails(props) {
         }}
 	/>
       <Stack.Screen name="prev" component={orchRowDetails} />
-      <Stack.Screen name="next" component={Home} />
+      <Stack.Screen name="next" component={OrchardHome} />
     
     </Stack.Navigator>
   );
 }
 
+
+
+function OrchardHome(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="orchardDetails"
+        component={Elements}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="prev" component={orchRowDetails} />
+      <Stack.Screen name="next" component={Home} />
+    
+    </Stack.Navigator>
+  );
+}
 
 
 

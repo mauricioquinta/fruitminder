@@ -22,8 +22,11 @@ from fruitminderApp import views
 router = routers.DefaultRouter()
 router.register(r'todos', views.TodoView, 'todo')
 router.register(r'trees', views.TreeView, 'tree')
+router.register(r'rows', views.RowView, 'row')
+router.register(r'orchards', views.OrchardView, 'orchard')
+router.register(r'treeToRows', views.TreeToRowView, 'todo')
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
+   path('admin/', admin.site.urls),
+   path('api/', include(router.urls)),   
 ]

@@ -3,7 +3,7 @@ from .models import Todo
 from .models import Tree
 from .models import Orchard
 from .models import Row
-from .models import treeToRow
+from .models import TreeToRow
 
 
 
@@ -30,5 +30,5 @@ class RowSerializer(serializers.ModelSerializer):
 
 class TreeToRowSerializer(serializers.ModelSerializer):
     class Meta:
-        model = treeToRow
+        model = TreeToRow
         fields = ('treeNum','rowNum')

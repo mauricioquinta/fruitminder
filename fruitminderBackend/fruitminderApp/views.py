@@ -7,11 +7,14 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .serializers import TodoSerializer
 from .serializers import TreeSerializer
+from .serializers import OrchardSerializer
+from .serializers import RowSerializer
+from .serializers import TreeToRowSerializer
 from .models import Todo
 from .models import Tree
 from .models import Orchard
 from .models import Row
-from .models import treeToRow
+from .models import TreeToRow
 
 # Create your views here.
 
@@ -26,11 +29,12 @@ class TreeView(viewsets.ModelViewSet):
 class OrchardView(viewsets.ModelViewSet):
     serializer_class = OrchardSerializer
     queryset = Orchard.objects.all()
+    
 
 class RowView(viewsets.ModelViewSet):
     serializer_class = RowSerializer
     queryset = Row.objects.all()
 
-class TreeToRow(viewsets.ModelViewSet):
+class TreeToRowView(viewsets.ModelViewSet):
     serializer_class = TreeToRowSerializer
-    queryset = treeToRow.objects.all()
+    queryset = TreeToRow.objects.all()

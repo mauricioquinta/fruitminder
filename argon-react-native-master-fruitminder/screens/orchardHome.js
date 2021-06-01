@@ -91,25 +91,33 @@ const  newOrchard = () => {
 		      
                       <Block center>
 			<Button color="primary" style={styles.button}>
-			  Find closest tree to me 
+			  <Text color="black">
+			    Find closest tree to me
+			  </Text>
 			</Button>
 		      </Block>
 
 		      <Block center>
 			<Button color="primary" style={styles.button}>
-			  Locate a tree
+			  <Text color="black">
+			    Locate a tree
+			  </Text>
 			</Button>
 		      </Block>
 
 		      <Block center>
 			<Button color="primary" style={styles.button}>
-			  Add a tree
+			  <Text color="black">
+			    Add a tree
+			  </Text>
 			</Button>
 		      </Block>
 
 		      <Block center>
 			<Button color="primary" style={styles.button}>
-			  Log Overview
+			  <Text color="black">
+			    Log Overview
+			  </Text>
 			</Button>
 		      </Block>
 		      
@@ -124,7 +132,9 @@ const  newOrchard = () => {
 		      
                       <Block center>
 			<Button color="primary" style={styles.button}>
-			  View All Tasks
+			  <Text color="black">
+			    View All Tasks
+			    </Text>
 			</Button>
 		      </Block>
                     </Block>
@@ -149,20 +159,18 @@ const styles = StyleSheet.create({
   registerContainer: {
     width: width * 0.9,
     height: height * 0.78,
-    backgroundColor: "#F4F5F7",
     borderRadius: 4,
     shadowColor: argonTheme.COLORS.BLACK,
     shadowOffset: {
       width: 0,
       height: 4
     },
-    shadowRadius: 8,
+    shadowRadius: 10,
     shadowOpacity: 0.1,
     elevation: 1,
     overflow: "hidden"
   },
   socialConnect: {
-    backgroundColor: argonTheme.COLORS.WHITE,
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderColor: "#8898AA"
   },
@@ -186,7 +194,7 @@ const styles = StyleSheet.create({
   },
     button: {
     marginBottom: theme.SIZES.BASE,
-	width: width - theme.SIZES.BASE * 2,
+	width: width - theme.SIZES.BASE * 2.6,
 	borderColor: 'black'
     },
   inputIcons: {

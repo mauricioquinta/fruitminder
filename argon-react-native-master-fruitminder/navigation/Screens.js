@@ -420,7 +420,7 @@ function OrchardHome(props) {
     <Stack.Navigator mode="card" headerMode="none">
       <Stack.Screen
         name="orchardDetails"
-        component={Elements}
+        component={orchardHome}
         option={{
           headerTransparent: true
         }}

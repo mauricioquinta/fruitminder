@@ -12,7 +12,8 @@ const { width } = Dimensions.get('screen');
 
 class Home extends React.Component {
     /* this needs to be changed to get the trees object displayed*/
-  renderArticles = () => {
+    renderArticles = () => {
+	const { navigation } = this.props;
     return (
 	<ScrollView
           showsVerticalScrollIndicator={false}	

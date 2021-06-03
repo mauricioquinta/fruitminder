@@ -81,7 +81,8 @@ const styles = StyleSheet.create({
   },
   articles: {
     width: width - theme.SIZES.BASE * 2,
-    paddingVertical: theme.SIZES.BASE,
+      paddingVertical: theme.SIZES.BASE,
+      paddingBottom:50
   },
     
 

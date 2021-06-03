@@ -38,5 +38,6 @@ export default {
   Pro,
   ArgonLogo,
   iOSLogo,
-  androidLogo
+    androidLogo,
+    orchardMap
 };

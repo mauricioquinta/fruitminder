@@ -27,7 +27,7 @@ import treeSelect from "../screens/fruitTreeSelection"
 import orchRowDetails from "../screens/orchRowDetails"
 import newOrchDetails from "../screens/newOrchDetails"
 import orchardHome from "../screens/orchardHome"
-import orcharOverview from "../screens/orchardOverview"
+import orchardOverview from "../screens/orchardOverview"
 
 // drawer
 import CustomDrawerContent from "./Menu";
@@ -266,7 +266,7 @@ function JoinOrchard_1(props) {
       
       
       <Stack.Screen name="prev" component={LoginPage} />
-      <Stack.Screen name="next" component={Home} />
+      <Stack.Screen name="next" component={OrchardHome} />
     
     </Stack.Navigator>
   );
@@ -421,7 +421,7 @@ function OrchardHome(props) {
     <Stack.Navigator mode="card" headerMode="none">
       <Stack.Screen
         name="orchardHome"
-        component={OrchardHome}
+        component={orchardHome}
         option={{
           headerTransparent: true
         }}

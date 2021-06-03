@@ -16,13 +16,13 @@ export default [
     cta: 'View article' 
   },
   {
-    title: 'Fashion is a popular style, especially in …',
-    image: 'https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1326&q=80',
+    title: 'This is some update on row X',
+    image: 'https://www.teakauracing.com/wp-content/uploads/2016/03/X.png',
     cta: 'View article' 
   },
   {
-    title: 'Argon is a great free UI packag …',
-    image: 'https://images.unsplash.com/photo-1482686115713-0fbcaced6e28?fit=crop&w=1947&q=80',
+    title: 'And What we have done to row Y  ',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/LetterY.svg/1200px-LetterY.svg.png',
     cta: 'View article', 
     horizontal: true
   },

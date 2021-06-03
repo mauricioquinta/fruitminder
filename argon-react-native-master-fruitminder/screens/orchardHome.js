@@ -73,10 +73,11 @@ const  newOrchard = () => {
                       </Block>
 		      
                       <Block center>
-			<Button color="primary" style={styles.button}>
+			<Button color="primary" style={styles.button}
+				onPress={() => navigation.navigate("orchOverview")}>
 			  <Text color="black">
 			    View Orchard Overview
-			    </Text>
+			  </Text>
 			</Button>
 		      </Block>
 		      

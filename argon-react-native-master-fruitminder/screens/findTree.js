@@ -5,12 +5,15 @@ import {
   Dimensions,
   StatusBar,
     KeyboardAvoidingView,
-    ScrollView
+    ScrollView,
+    Image
+    
 } from "react-native";
 import { Block, Checkbox, Text, theme } from "galio-framework";
 
-import { Button, Icon, Input } from "../components";
+import { Button, Icon, Input,Card } from "../components";
 import { Images, argonTheme } from "../constants";
+import articles from '../constants/articlesTwo';
 import {  useNavigation } from '@react-navigation/native' // <-- import useNavigation hook
 
 
@@ -29,7 +32,7 @@ const  newOrchard = () => {
 	
 	return (
 	    
-	    <ScrollView>
+	    <ScrollView contentContainerStyle={{ paddingBottom: 250 }}>
       <Block flex middle>
         <StatusBar hidden />
         <ImageBackground
@@ -46,11 +49,6 @@ const  newOrchard = () => {
 		      Fruitminder
                     </Text>
 		  </Block>
-		  <Block style={styles.subTitle}>
-                    <Text color="black" size={16}>
-		      Lets name your orchard and give it a picture
-                    </Text>
-                  </Block>
 		</Block>
 		</Block>
 	
@@ -65,84 +63,57 @@ const  newOrchard = () => {
                     enabled
                     >
 		    
-		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
-		      <Block style={styles.subTitle}>
+		    <Block width={width * 0.8} style={{ marginBottom: 15, paddingBottom:250 }}>
+		      <Block style={styles.orchOverview}>
 			<Text color="black" size={16}>
-			 Orchard Overview
+			 Locate a Tree
 			</Text>
                       </Block>
 		      
                       <Block center>
-			<Button color="primary" style={styles.button}
-				onPress={() => navigation.navigate("orchOverview")}>
+			<Button color="primary" style={styles.button}>
 			  <Text color="black">
-			    View Orchard Overview
+			    Locate via Map
 			  </Text>
 			</Button>
 		      </Block>
+
+		      <Block center>
+			<Button color="primary" style={styles.button}>
+			  <Text color="black">
+			    Locate via GPS
+			  </Text>
+			</Button>
+		      </Block>
+
+		      <Block center>
+			<Button color="primary" style={styles.button}>
+			  <Text color="black">
+			    Locate via Filters
+			  </Text>
+			</Button>
+		      </Block>
+
+	    
 		      
                     </Block>
 
-		     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
-
-		       <Block style={styles.subTitle}>
-			<Text color="black" size={16}>
-			 Orchard Options
-			</Text>
-                      </Block>
-		      
-                      <Block center>
-			<Button color="primary" style={styles.button}
-				onPress={() => navigation.navigate("findTreeNear")}>
-			  <Text color="black">
-			    Find closest tree to me
-			  </Text>
-			</Button>
-		      </Block>
+		    <Block width={width * 0.8} style={{ marginBottom: 15 , paddingTop:50}}>
+		  
 
 		      <Block center>
 			<Button color="primary" style={styles.button}
-				onPress={() => navigation.navigate("locateTree")}>
+				onPress={() => navigation.navigate("cancel")}>
 			  <Text color="black">
-			    Locate a tree
-			  </Text>
-			</Button>
-		      </Block>
-
-		      <Block center>
-			<Button color="primary" style={styles.button}>
-			  <Text color="black">
-			    Add a tree
-			  </Text>
-			</Button>
-		      </Block>
-
-		      <Block center>
-			<Button color="primary" style={styles.button}>
-			  <Text color="black">
-			    Log Overview
-			  </Text>
-			</Button>
-		      </Block>
-		      
-                    </Block>
-
-		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
-		      <Block style={styles.subTitle}>
-			<Text color="black" size={16}>
-			  Allocated Tasks
-			</Text>
-                      </Block>
-		      
-                      <Block center>
-			<Button color="primary" style={styles.button}>
-			  <Text color="black">
-			    View All Tasks
+			    Cancel
 			    </Text>
 			</Button>
 		      </Block>
+		      
                     </Block>
+		    
 
+		    
 		    
 		 
 
@@ -171,8 +142,7 @@ const styles = StyleSheet.create({
     },
     shadowRadius: 10,
     shadowOpacity: 0.1,
-    elevation: 1,
-    overflow: "hidden"
+      elevation: 1
   },
   socialConnect: {
     borderBottomWidth: StyleSheet.hairlineWidth,
@@ -217,13 +187,33 @@ const styles = StyleSheet.create({
       marginTop:5
   },
   subTitle: {
-      marginTop: 5
+      marginTop: 5,
+  },
+    orchAdmin: {
+	marginTop: 5,
+	paddingBottom:150,
+	flexDirection: "row",
+	flexWrap: "wrap",
+  },
+  orchOverview: {
+      marginTop: 5,
+      paddingBottom:5
   },
   padded: {
       paddingHorizontal: theme.SIZES.BASE *2,
       position: "relative",
       bottom: theme.SIZES.BASE,
       zIndex: 2,
+  },
+    logo: {
+    width: 205,
+    height: 215,
+    zIndex: 2,
+    position: 'relative',
+    marginTop: '-50%'
+    },
+    nearbyTrees: {
+	paddingBottom:100
   }
   
 });

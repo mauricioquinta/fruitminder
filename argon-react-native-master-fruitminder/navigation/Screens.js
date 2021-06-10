@@ -29,6 +29,7 @@ import newOrchDetails from "../screens/newOrchDetails"
 import orchardHome from "../screens/orchardHome"
 import orchardOverview from "../screens/orchardOverview"
 import findClosestTree from "../screens/findClosestTree"
+import locateTree from "../screens/findTree"
 
 // drawer
 import CustomDrawerContent from "./Menu";
@@ -409,7 +410,7 @@ function OrchardDetails(props) {
           headerTransparent: true
         }}
 	/>
-      <Stack.Screen name="prev" component={orchRowDetails} />
+      <Stack.Screen name="prev" component={OrchRowDetails} />
       <Stack.Screen name="next" component={OrchardHome} />
     
     </Stack.Navigator>
@@ -430,6 +431,7 @@ function OrchardHome(props) {
 	/>
       <Stack.Screen name="orchOverview" component={OrchardOverview} />
       <Stack.Screen name="findTreeNear" component={FindClosestTree} />
+      <Stack.Screen name="locateTree" component={locateTree} />
       <Stack.Screen name="next" component={Home} />
     
     </Stack.Navigator>
@@ -464,7 +466,24 @@ function FindClosestTree(props) {
           headerTransparent: true
         }}
 	/>
-      <Stack.Screen name="prev" component={orchRowDetails} />
+      <Stack.Screen name="cancel" component={OrchardHome} />
+      <Stack.Screen name="next" component={Home} />
+    
+    </Stack.Navigator>
+  );
+}
+
+function FindTree(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="findTree "
+        component={findTree}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="cancel" component={OrchardHome} />
       <Stack.Screen name="next" component={Home} />
     
     </Stack.Navigator>

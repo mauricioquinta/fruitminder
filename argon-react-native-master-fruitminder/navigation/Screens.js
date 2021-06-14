@@ -30,6 +30,8 @@ import orchardHome from "../screens/orchardHome"
 import orchardOverview from "../screens/orchardOverview"
 import findClosestTree from "../screens/findClosestTree"
 import locateTree from "../screens/findTree"
+import addTree from "../screens/addTree"
+import logOverview from "../screens/logOverview"
 
 // drawer
 import CustomDrawerContent from "./Menu";
@@ -431,7 +433,9 @@ function OrchardHome(props) {
 	/>
       <Stack.Screen name="orchOverview" component={OrchardOverview} />
       <Stack.Screen name="findTreeNear" component={FindClosestTree} />
-      <Stack.Screen name="locateTree" component={locateTree} />
+      <Stack.Screen name="locateTree" component={FindTree} />
+      <Stack.Screen name="addTree" component={AddTree} />
+      <Stack.Screen name="logOverview" component={LogOverview} />
       <Stack.Screen name="next" component={Home} />
     
     </Stack.Navigator>
@@ -478,7 +482,25 @@ function FindTree(props) {
     <Stack.Navigator mode="card" headerMode="none">
       <Stack.Screen
         name="findTree "
-        component={findTree}
+        component={locateTree}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="cancel" component={OrchardHome} />
+      <Stack.Screen name="next" component={Home} />
+    
+    </Stack.Navigator>
+  );
+}
+
+
+function AddTree(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="addTree "
+        component={addTree}
         option={{
           headerTransparent: true
         }}
@@ -492,6 +514,22 @@ function FindTree(props) {
 
 
 
+function LogOverview(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+      name="logOverView "
+        component={logOverview}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="cancel" component={OrchardHome} />
+      <Stack.Screen name="next" component={Home} />
+    
+    </Stack.Navigator>
+  );
+}
 
 function AppStack(props) {
   return (

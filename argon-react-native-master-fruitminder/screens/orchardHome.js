@@ -110,7 +110,8 @@ const  newOrchard = () => {
 		      </Block>
 
 		      <Block center>
-			<Button color="primary" style={styles.button}>
+			<Button color="primary" style={styles.button}
+				onPress={() => navigation.navigate("addTree")}>
 			  <Text color="black">
 			    Add a tree
 			  </Text>
@@ -118,7 +119,8 @@ const  newOrchard = () => {
 		      </Block>
 
 		      <Block center>
-			<Button color="primary" style={styles.button}>
+			<Button color="primary" style={styles.button}
+				onPress={() => navigation.navigate("logOverview")}>
 			  <Text color="black">
 			    Log Overview
 			  </Text>

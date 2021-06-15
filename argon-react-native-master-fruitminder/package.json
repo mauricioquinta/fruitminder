@@ -29,6 +29,7 @@
     "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.3.tar.gz",
+    "react-native-clean-project": "^3.6.4",
     "react-native-elements": "^3.3.2",
     "react-native-gesture-handler": "~1.7.0",
     "react-native-modal-dropdown": "github:siemiatj/react-native-modal-dropdown",

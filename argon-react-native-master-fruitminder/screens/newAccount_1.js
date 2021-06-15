@@ -4,7 +4,9 @@ import {
   ImageBackground,
   Dimensions,
   StatusBar,
-  KeyboardAvoidingView
+    KeyboardAvoidingView,
+    ScrollView,
+    View
 } from "react-native";
 import { Block, Checkbox, Text, theme } from "galio-framework";
 
@@ -17,33 +19,39 @@ class Register extends React.Component {
     render() {
 	 const { navigation } = this.props;
 	
-    return (
-      <Block flex middle>
-        <StatusBar hidden />
-        <ImageBackground
-          source={Images.RegisterBackground}
-          style={{ width, height, zIndex: 1 }}
-        >
-          <Block flex middle>
-
-	    <Block flex space="between" style={styles.padded}>
-	      <Block flex space="around" style={{ zIndex: 2 }}>
-                <Block style={styles.title}>
-                  <Block>
-                    <Text color="black" size={40}>
-		      Fruitminder
-                    </Text>
-		  </Block>
-		  <Block style={styles.subTitle}>
-                    <Text color="black" size={16}>
-		      Create an Account: General Info
-                    </Text>
-                  </Block>
-		</Block>
-	      </Block>
-	    
-            <Block style={styles.registerContainer}>
+	return (
+	    <View style={{flex: 1}}>
+	      <ScrollView contentContainerStyle={{ paddingBottom: 100 }} >
 	      
+	      <Block>
+		<StatusBar hidden />
+		<ImageBackground
+		  source={Images.RegisterBackground}
+		  style={{ width, height, zIndex: 1 }}
+		  >
+
+		  
+		  <Block flex middle>
+
+		    <Block flex space="between" style={styles.padded}>
+		      <Block flex space="around" style={{ zIndex: 2 }}>
+			<Block style={styles.title}>
+			  <Block>
+			    <Text color="black" size={40}>
+			      Fruitminder
+			    </Text>
+			  </Block>
+			  <Block style={styles.subTitle}>
+			    <Text color="black" size={16}>
+			      Create an Account: General Info
+			    </Text>
+			  </Block>
+			</Block>
+		</Block>
+		
+		      
+		<Block style={styles.registerContainer}>
+			
 		
                 <Block flex center>
                   <KeyboardAvoidingView
@@ -168,6 +176,8 @@ class Register extends React.Component {
 				      />
 				}
 				/>
+
+		      {/*
                       <Block row style={styles.passwordCheck}>
                         <Text size={12} color={argonTheme.COLORS.MUTED}>
                           password strength:
@@ -177,6 +187,8 @@ class Register extends React.Component {
                           strong
                         </Text>
                       </Block>
+		      */}
+		      
                     </Block>
 
 		    
@@ -186,7 +198,7 @@ class Register extends React.Component {
                         checkboxStyle={{
                           borderWidth: 3
                         }}
-                        color={argonTheme.COLORS.PRIMARY}
+                        color={argonTheme.COLORS.BLACK}
                         label="I agree with the"
                       />
                       <Button
@@ -226,6 +238,8 @@ class Register extends React.Component {
           </Block>
         </ImageBackground>
       </Block>
+		</ScrollView>
+	    </View>
     );
   }
 }
@@ -233,7 +247,7 @@ class Register extends React.Component {
 const styles = StyleSheet.create({
   registerContainer: {
     width: width * 0.9,
-    height: height * 0.78,
+    height: height * 0.85,
     backgroundColor: "#F4F5F7",
     borderRadius: 4,
     shadowColor: argonTheme.COLORS.BLACK,
@@ -243,8 +257,7 @@ const styles = StyleSheet.create({
     },
     shadowRadius: 8,
     shadowOpacity: 0.1,
-    elevation: 1,
-    overflow: "hidden"
+      elevation: 1,
   },
   socialConnect: {
     backgroundColor: argonTheme.COLORS.WHITE,
@@ -275,14 +288,14 @@ const styles = StyleSheet.create({
   passwordCheck: {
     paddingLeft: 15,
     paddingTop: 13,
-    paddingBottom: 30
+      paddingBottom: 30
   },
   createButton: {
     width: "40%",
-    marginTop: 25
+    marginTop: 40
   },
   title: {
-      marginTop:5
+      marginTop:50
   },
   subTitle: {
       marginTop: 5

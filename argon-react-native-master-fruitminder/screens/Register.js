@@ -4,7 +4,8 @@ import {
   ImageBackground,
   Dimensions,
   StatusBar,
-  KeyboardAvoidingView
+    KeyboardAvoidingView,
+    ScrollView
 } from "react-native";
 import { Block, Checkbox, Text, theme } from "galio-framework";
 
@@ -16,110 +17,113 @@ const { width, height } = Dimensions.get("screen");
 class Register extends React.Component {
     render() {
 	const { navigation } = this.props;
-    return (
-      <Block flex middle>
-        <StatusBar hidden />
-        <ImageBackground
-          source={Images.RegisterBackground}
-          style={{ width, height, zIndex: 1 }}
-        >
-          <Block flex middle>
-            <Block style={styles.registerContainer}>
-	      
-
-	      
-	      <Block flex space="between" style={styles.padded}>
-		<Block flex space="around" style={{ zIndex: 2 }}>
-                  <Block style={styles.title}>
-                    <Block>
-                      <Text color="black" size={60}>
-			Fruitminder
-                      </Text>
-                    </Block>
-		  </Block>
-		</Block>
+	return (
+	    <ScrollView>    
+	      <Block flex middle>
+		<StatusBar hidden />
+		<ImageBackground
+		  source={Images.RegisterBackground}
+		  style={{ width, height, zIndex: 1 }}
+		  >
+		  <Block flex middle>
+		    <Block style={styles.registerContainer}>
+		<Block flex space="between" style={styles.padded}>
 		
-                <Block flex center>
-                  <KeyboardAvoidingView
-                    style={{ flex: 1 }}
-                    behavior="padding"
-                    enabled
-                  >
-                    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
-                      <Input
-                        borderless
-                        placeholder="UserName"
-                        iconContent={
-                          <Icon
-                            size={16}
-                            color={argonTheme.COLORS.ICON}
-                            name="hat-3"
-                            family="ArgonExtra"
-                            style={styles.inputIcons}
-                          />
-                        }
-                      />
-                    </Block>
-                   
-                    <Block width={width * 0.8}>
-                      <Input
-                        password
-                        borderless
-                        placeholder="Password"
-                        iconContent={
-                          <Icon
-                            size={16}
-                            color={argonTheme.COLORS.ICON}
-                            name="padlock-unlocked"
-                            family="ArgonExtra"
-                            style={styles.inputIcons}
-                          />
-                        }
-                      />
-                      <Block row style={styles.passwordCheck}>
-                        <Text size={12} color={argonTheme.COLORS.MUTED}>
-                          password strength:
-                        </Text>
-                        <Text bold size={12} color={argonTheme.COLORS.SUCCESS}>
-                          {" "}
-                          strong
-                        </Text>
-                      </Block>
-                    </Block>
-                    <Block row width={width * 0.75}>
-                      <Checkbox
-                        checkboxStyle={{
-                          borderWidth: 3
-                        }}
-                        color={argonTheme.COLORS.PRIMARY}
-                        label="I agree with the"
-                      />
-                      <Button
-                        style={{ width: 100 }}
-                        color="primary"
-                        textStyle={{
-                          color: argonTheme.COLORS.BLACK,
-                          fontSize: 14
-                        }}
-                      >
-                        Privacy Policy
-                      </Button>
-                    </Block>
-                    <Block middle>
-		      <Button color="secondary" style={styles.createButton}
-			      onPress={() => navigation.navigate("joinOrchard")}>
-                        <Text bold size={14} color={argonTheme.COLORS.BLACK}>
-                          LOGIN
-                        </Text>
-                      </Button>
-                    </Block>
-                  </KeyboardAvoidingView>
-                </Block>
-              </Block>
-            </Block>
-          </Block>
-        </ImageBackground>
-      </Block>
+			<Block flex space="around" style={{ zIndex: 2 }}>
+			  <Block style={styles.title}>
+			    <Block>
+			      <Text color="black" size={55}>
+				Fruitminder
+			      </Text>
+			    </Block>
+			  </Block>
+			</Block>
+			
+			<Block flex center>
+			  <KeyboardAvoidingView
+			    style={{ flex: 1 }}
+			    behavior="padding"
+			    enabled
+			    >
+			    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+			      <Input
+				borderless
+				placeholder="UserName"
+				iconContent={
+					<Icon
+					      size={16}
+					      color={argonTheme.COLORS.ICON}
+					      name="hat-3"
+					      family="ArgonExtra"
+					      style={styles.inputIcons}
+					      />
+					}
+					/>
+			    </Block>
+			    
+			    <Block width={width * 0.8}>
+			      <Input
+				password
+				borderless
+				placeholder="Password"
+				iconContent={
+					<Icon
+					      size={16}
+					      color={argonTheme.COLORS.ICON}
+					      name="padlock-unlocked"
+					      family="ArgonExtra"
+					      style={styles.inputIcons}
+					      />
+					}
+					/>
+			      <Block row style={styles.passwordCheck}>
+				<Text size={12} color={argonTheme.COLORS.MUTED}>
+				  password strength:
+				</Text>
+				<Text bold size={12} color={argonTheme.COLORS.SUCCESS}>
+				  {" "}
+				  strong
+				</Text>
+			      </Block>
+			    </Block>
+			    
+			    <Block row width={width * 0.75}>
+			      <Checkbox
+				checkboxStyle={{
+				    borderWidth: 3
+				}}
+				color={argonTheme.COLORS.PRIMARY}
+				label="I agree with the"
+				/>
+			      <Button
+				style={{ width: 100 }}
+				color="primary"
+				textStyle={{
+				    color: argonTheme.COLORS.BLACK,
+				    fontSize: 14
+				}}
+				>
+				Privacy Policy
+			      </Button>
+			    </Block>
+			    
+			    <Block middle>
+			      <Button color="secondary" style={styles.createButton}
+				      onPress={() => navigation.navigate("joinOrchard")}>
+				<Text bold size={14} color={argonTheme.COLORS.BLACK}>
+				  LOGIN
+				</Text>
+			      </Button>
+			    </Block>
+			    
+			  </KeyboardAvoidingView>
+			</Block>
+		      </Block>
+		    </Block>
+		  </Block>
+		</ImageBackground>
+	      </Block>
+	    </ScrollView>  
     );
   }
 }
@@ -135,10 +139,10 @@ const styles = StyleSheet.create({
       width: 0,
       height: 4
     },
+      marginTop:'-15%',
     shadowRadius: 8,
     shadowOpacity: 0.1,
     elevation: 1,
-    overflow: "hidden"
   },
   socialConnect: {
     backgroundColor: argonTheme.COLORS.WHITE,
@@ -173,7 +177,7 @@ const styles = StyleSheet.create({
   },
   createButton: {
     width: width * 0.5,
-    marginTop: 25
+    marginTop:40
   },
   title: {
       marginTop:'-5%'

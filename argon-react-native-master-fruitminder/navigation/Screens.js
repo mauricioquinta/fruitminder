@@ -23,7 +23,16 @@ import newOrchard_1 from "../screens/newOrchard_1"
 import newOrchard_2 from "../screens/newOrchard_2"
 import joinOrchard_1 from "../screens/joinOrchard_1"
 import addressIn from "../screens/manualAddressInput"
-import treeSelect from "../screens/fruitTreeSelection.js"
+import treeSelect from "../screens/fruitTreeSelection"
+import orchRowDetails from "../screens/orchRowDetails"
+import newOrchDetails from "../screens/newOrchDetails"
+import orchardHome from "../screens/orchardHome"
+import orchardOverview from "../screens/orchardOverview"
+import findClosestTree from "../screens/findClosestTree"
+import locateTree from "../screens/findTree"
+import addTree from "../screens/addTree"
+import logOverview from "../screens/logOverview"
+
 // drawer
 import CustomDrawerContent from "./Menu";
 
@@ -224,6 +233,7 @@ function OnboardingPickStack(props) {
     <Stack.Screen name="Login" component={LoginPage} />
     <Stack.Screen name="newUser" component={CreateNewAccount_1} />
     <Stack.Screen name="todoTest" component={todoTest} />
+    <Stack.Screen name="orchHome" component={OrchardHome} />
 	  
     
     </Stack.Navigator>
@@ -261,7 +271,7 @@ function JoinOrchard_1(props) {
       
       
       <Stack.Screen name="prev" component={LoginPage} />
-      <Stack.Screen name="next" component={Home} />
+      <Stack.Screen name="next" component={OrchardHome} />
     
     </Stack.Navigator>
   );
@@ -369,7 +379,41 @@ function TreeFruitSelect(props) {
         }}
 	/>
       <Stack.Screen name="prev" component={ManualAddress} />
-      <Stack.Screen name="next" component={Elements} />
+      <Stack.Screen name="next" component={OrchRowDetails} />
+    
+    </Stack.Navigator>
+  );
+}
+
+function OrchRowDetails(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="orchRowDetails"
+        component={orchRowDetails}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="prev" component={TreeFruitSelect} />
+      <Stack.Screen name="next" component={OrchardDetails} />
+    
+    </Stack.Navigator>
+  );
+}
+
+function OrchardDetails(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="orchardDetails"
+        component={newOrchDetails}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="prev" component={OrchRowDetails} />
+      <Stack.Screen name="next" component={OrchardHome} />
     
     </Stack.Navigator>
   );
@@ -377,8 +421,115 @@ function TreeFruitSelect(props) {
 
 
 
+function OrchardHome(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="orchardHome"
+        component={orchardHome}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="orchOverview" component={OrchardOverview} />
+      <Stack.Screen name="findTreeNear" component={FindClosestTree} />
+      <Stack.Screen name="locateTree" component={FindTree} />
+      <Stack.Screen name="addTree" component={AddTree} />
+      <Stack.Screen name="logOverview" component={LogOverview} />
+      <Stack.Screen name="next" component={Home} />
+    
+    </Stack.Navigator>
+  );
+}
 
 
+function OrchardOverview(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="orchardOverview"
+        component={orchardOverview}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="prev" component={orchRowDetails} />
+      <Stack.Screen name="next" component={Home} />
+    
+    </Stack.Navigator>
+  );
+}
+
+function FindClosestTree(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="findClosestTree "
+        component={findClosestTree}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="cancel" component={OrchardHome} />
+      <Stack.Screen name="next" component={Home} />
+    
+    </Stack.Navigator>
+  );
+}
+
+function FindTree(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="findTree "
+        component={locateTree}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="cancel" component={OrchardHome} />
+      <Stack.Screen name="next" component={Home} />
+    
+    </Stack.Navigator>
+  );
+}
+
+
+function AddTree(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="addTree "
+        component={addTree}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="cancel" component={OrchardHome} />
+      <Stack.Screen name="next" component={Home} />
+    
+    </Stack.Navigator>
+  );
+}
+
+
+
+function LogOverview(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+      name="logOverView "
+        component={logOverview}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="cancel" component={OrchardHome} />
+      <Stack.Screen name="next" component={Home} />
+    
+    </Stack.Navigator>
+  );
+}
 
 function AppStack(props) {
   return (

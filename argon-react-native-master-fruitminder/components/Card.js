@@ -52,8 +52,8 @@ const styles = StyleSheet.create({
     backgroundColor: theme.COLORS.WHITE,
     marginVertical: theme.SIZES.BASE,
     borderWidth: 0,
-    minHeight: 114,
-    marginBottom: 16
+    minHeight: 100,
+    marginBottom: 10
   },
   cardTitle: {
     flex: 1,

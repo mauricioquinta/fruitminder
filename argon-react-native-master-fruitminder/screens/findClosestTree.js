@@ -1,25 +1,38 @@
-import React from "react";
+import React,{useState} from "react";
 import {
   StyleSheet,
   ImageBackground,
   Dimensions,
   StatusBar,
     KeyboardAvoidingView,
-    ScrollView
+    ScrollView,
+    Image
+    
 } from "react-native";
 import { Block, Checkbox, Text, theme } from "galio-framework";
 
-import { Button, Icon, Input } from "../components";
+import { Button, Icon, Input,Card } from "../components";
 import { Images, argonTheme } from "../constants";
+import articles from '../constants/articlesTwo';
+import {  useNavigation } from '@react-navigation/native' // <-- import useNavigation hook
+
 
 const { width, height } = Dimensions.get("screen");
 
-class Register extends React.Component {
-    render() {
-	 const { navigation } = this.props;
+
+
+const  newOrchard = () => {     
+	
+	
+	
+
+    const [orchardName, setOrchardName] = useState();
+    const navigation = useNavigation() // <-- add this line
+    
 	
 	return (
-	<ScrollView>
+	    
+	    <ScrollView contentContainerStyle={{ paddingBottom: 250 }}>
       <Block flex middle>
         <StatusBar hidden />
         <ImageBackground
@@ -36,13 +49,9 @@ class Register extends React.Component {
 		      Fruitminder
                     </Text>
 		  </Block>
-		  <Block style={styles.subTitle}>
-                    <Text color="black" size={16}>
-	                Please enter credentials supplied by your orchard manager
-                    </Text>
-                  </Block>
 		</Block>
-	      </Block>
+		</Block>
+	
 	    
             <Block style={styles.registerContainer}>
 	      
@@ -53,63 +62,56 @@ class Register extends React.Component {
                     behavior="padding"
                     enabled
                     >
-		  
-		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
-                      <Input
-                        borderless
-                        placeholder="Orchard Name"
-                        iconContent={
-				<Icon
-				      size={16}
-				      color={argonTheme.COLORS.ICON}
-				      name="badge-13"
-				      family="ArgonExtra"
-				      style={styles.inputIcons}
-				      />
-				}
-				/>
+		    
+		    <Block width={width * 0.8} style={{ marginBottom: 15, paddingBottom:250 }}>
+		      <Block style={styles.orchOverview}>
+			<Text color="black" size={16}>
+			 Locate a Tree
+			</Text>
+			<Text color="grey" size={14}>
+			 Closest Trees to you
+			</Text>
+                      </Block>
+		      
+                      <Block flex  style={styles.nearbyTrees}>
+			<Card item={articles[0]} horizontal  />
+			<Card item={articles[1]} horizontal />
+			<Card item={articles[2]} horizontal />
+		      </Block>
+		      
                     </Block>
 
 		    
 
+		     
+		    <Block width={width * 0.8} style={{ marginBottom: 15 , paddingTop:50}}>
+		      <Block style={styles.subTitle}>
+			<Text color="black" size={16}>
+			  GPS Coordinates
+			</Text>
+                      </Block>
+		      
+                      <Block center>
+			<Button color="primary" style={styles.button}>
+			  <Text color="red">
+			    Find Coordinates
+			    </Text>
+			</Button>
+		      </Block>
 
-		    <Block width={width * 0.8}>
-                      <Input
-                        password
-                        borderless
-                        placeholder="Password"
-                        iconContent={
-				<Icon
-				      size={16}
-				      color={argonTheme.COLORS.ICON}
-				      name="padlock-unlocked"
-				      family="ArgonExtra"
-				      style={styles.inputIcons}
-				      />
-				}
-				/>
+		      <Block center>
+			<Button color="primary" style={styles.button}
+				onPress={() => navigation.navigate("cancel")}>
+			  <Text color="black">
+			    Cancel
+			    </Text>
+			</Button>
+		      </Block>
+		      
                     </Block>
 
 
-		    
-		  
-		    
-                    <Block row  width={width * 0.75} style={{justifyContent: 'space-between'}}>
-                      <Button color="secondary" style={styles.createButton}
-			      onPress={() => navigation.navigate("prev")}
-			      >
-                        <Text bold size={14} color={argonTheme.COLORS.BLACK}>
-                          Previous Step
-                        </Text>
-                      </Button>
-		      <Button color="secondary" style={styles.createButton}
-			      onPress={() => navigation.navigate("next")}
-			      >
-                        <Text bold size={14} color={argonTheme.COLORS.BLACK}>
-                          Next Step
-                        </Text>
-                      </Button>
-                    </Block>
+		 
 
 		    
                   </KeyboardAvoidingView>
@@ -118,30 +120,27 @@ class Register extends React.Component {
             </Block>
           </Block>
         </ImageBackground>
-      </Block>
-	    </ScrollView>
+		</Block>
+		</ScrollView>
     );
-  }
 }
+
 
 const styles = StyleSheet.create({
   registerContainer: {
     width: width * 0.9,
     height: height * 0.78,
-    backgroundColor: "#F4F5F7",
     borderRadius: 4,
     shadowColor: argonTheme.COLORS.BLACK,
     shadowOffset: {
       width: 0,
       height: 4
     },
-    shadowRadius: 8,
+    shadowRadius: 10,
     shadowOpacity: 0.1,
-    elevation: 1,
-    overflow: "hidden"
+      elevation: 1
   },
   socialConnect: {
-    backgroundColor: argonTheme.COLORS.WHITE,
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderColor: "#8898AA"
   },
@@ -163,6 +162,11 @@ const styles = StyleSheet.create({
     fontWeight: "800",
     fontSize: 14
   },
+    button: {
+    marginBottom: theme.SIZES.BASE,
+	width: width - theme.SIZES.BASE * 2.6,
+	borderColor: 'black'
+    },
   inputIcons: {
     marginRight: 12
   },
@@ -179,15 +183,35 @@ const styles = StyleSheet.create({
       marginTop:5
   },
   subTitle: {
-      marginTop: 5
+      marginTop: 5,
+  },
+    orchAdmin: {
+	marginTop: 5,
+	paddingBottom:150,
+	flexDirection: "row",
+	flexWrap: "wrap",
+  },
+  orchOverview: {
+      marginTop: 5,
+      paddingBottom:5
   },
   padded: {
       paddingHorizontal: theme.SIZES.BASE *2,
       position: "relative",
       bottom: theme.SIZES.BASE,
       zIndex: 2,
+  },
+    logo: {
+    width: 205,
+    height: 215,
+    zIndex: 2,
+    position: 'relative',
+    marginTop: '-50%'
+    },
+    nearbyTrees: {
+	paddingBottom:100
   }
   
 });
 
-export default Register;
+export default newOrchard;

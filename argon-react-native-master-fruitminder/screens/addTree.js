@@ -33,104 +33,267 @@ const  newOrchard = () => {
 	return (
 	    
 	    <ScrollView contentContainerStyle={{ paddingBottom: 250 }}>
-      <Block flex middle>
-        <StatusBar hidden />
-        <ImageBackground
-          source={Images.RegisterBackground}
-          style={{ width, height, zIndex: 1 }}
-        >
-          <Block flex middle>
-
-	    <Block flex space="between" style={styles.padded}>
-	      <Block flex space="around" style={{ zIndex: 2 }}>
-                <Block style={styles.title}>
-                  <Block>
-                    <Text color="black" size={40}>
-		      Fruitminder
-                    </Text>
-		  </Block>
-		</Block>
-		</Block>
-	
-	    
-            <Block style={styles.registerContainer}>
-	      
-		
-                <Block flex center>
-                  <KeyboardAvoidingView
-                    style={{ flex: 1 }}
-                    behavior="padding"
-                    enabled
-                    >
-		    
-		    <Block width={width * 0.8} style={{ marginBottom: 15, paddingBottom:250 }}>
-		      <Block style={styles.orchOverview}>
-			<Text color="black" size={16}>
-			 Add a Tree 
-			</Text>
-			<Text color="grey" size={14}>
-			 core information
-			</Text>
-		
-                      </Block>
-		      
-                      <Block center>
-			<Button color="primary" style={styles.button}>
-			  <Text color="black">
-			    Locate via Map
-			  </Text>
-			</Button>
-		      </Block>
-
-		      <Block center>
-			<Button color="primary" style={styles.button}>
-			  <Text color="black">
-			    Locate via GPS
-			  </Text>
-			</Button>
-		      </Block>
-
-		      <Block center>
-			<Button color="primary" style={styles.button}>
-			  <Text color="black">
-			    Locate via Filters
-			  </Text>
-			</Button>
-		      </Block>
-
-	    
-		      
-                    </Block>
-
-		    <Block width={width * 0.8} style={{ marginBottom: 15 , paddingTop:50}}>
+	      <Block flex middle>	
+		<StatusBar hidden/>
+		<ImageBackground
+		  source={Images.RegisterBackground}
+		  style={{ width, height, zIndex: 1 }}
+		  >
 		  
-
-		      <Block center>
-			<Button color="primary" style={styles.button}
-				onPress={() => navigation.navigate("cancel")}>
-			  <Text color="black">
-			    Cancel
-			    </Text>
-			</Button>
-		      </Block>
+		  <Block flex middle>
+		    <Block flex space="between" style={styles.padded}>
 		      
+		      <Block flex space="around" style={{ zIndex: 2 }}>
+			<Block style={styles.title}>
+			  <Block>
+			    <Text color="black" size={40}>
+			      Fruitminder
+			    </Text>
+			  </Block>
+			</Block>
+		      </Block>
+	
+		      
+		      <Block style={styles.registerContainer}>
+			
+			
+			<Block flex center>
+			  <KeyboardAvoidingView
+			    style={{ flex: 1 }}
+			    behavior="padding"
+			    enabled
+			    >
+			    
+			    <Block width={width * 0.8} style={{ marginBottom: 15, paddingBottom:250 }}>
+			      <Block style={styles.orchOverview}>
+				<Text color="black" size={16}>
+				  Add a Tree 
+				</Text>
+				<Text color="grey" size={14}>
+				  core information
+				</Text>
+			      </Block>
+			      
+			      <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+				<Block style={styles.subTitle}>
+				  <Text color="black" size={16}>
+				    Tree Name
+				  </Text>
+				</Block>
+				<Input
+				  borderless
+				  placeholder="Harrold"
+				  iconContent={
+					  <Icon
+						size={16}
+						color={argonTheme.COLORS.ICON}
+						name="pencil"
+						family="ArgonExtra"
+						style={styles.inputIcons}
+						/>
+					  }
+					  onChangeText={orchardName => setOrchardName(orchardName)}
+				  defaultValue={orchardName}
+				  />
+</Block>
+
+<Block width={width * 0.8} style={{ marginBottom: 15 }}>
+  <Block style={styles.subTitle}>
+    <Text color="black" size={16}>
+      Tree Row
+    </Text>
+  </Block>
+  <Input
+    borderless
+    placeholder="row x"
+    iconContent={
+	    <Icon
+		  size={16}
+		  color={argonTheme.COLORS.ICON}
+		  name="pencil"
+		  family="ArgonExtra"
+		  style={styles.inputIcons}
+		  />
+	    }
+	    onChangeText={orchardName => setOrchardName(orchardName)}
+    defaultValue={orchardName}
+    />
+</Block>
+
+			       <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+		      <Block style={styles.subTitle}>
+			<Text color="black" size={16}>
+			  Tree Number
+			</Text>
+                      </Block>
+                      <Input
+                        borderless
+                        placeholder="tree num y"
+                        iconContent={
+				<Icon
+				      size={16}
+				      color={argonTheme.COLORS.ICON}
+				      name="pencil"
+				      family="ArgonExtra"
+				      style={styles.inputIcons}
+				      />
+				}
+			onChangeText={orchardName => setOrchardName(orchardName)}
+			defaultValue={orchardName}
+				/>
+			       </Block>
+
+			        <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+		      <Block style={styles.subTitle}>
+			<Text color="black" size={16}>
+			  Tree Variety
+			</Text>
+                      </Block>
+                      <Input
+                        borderless
+                        placeholder="sweetheart"
+                        iconContent={
+				<Icon
+				      size={16}
+				      color={argonTheme.COLORS.ICON}
+				      name="pencil"
+				      family="ArgonExtra"
+				      style={styles.inputIcons}
+				      />
+				}
+			onChangeText={orchardName => setOrchardName(orchardName)}
+			defaultValue={orchardName}
+				/>
+				</Block>
+
+
+
+				<Block style={{flexDirection: "row"}}>
+				   <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+		      <Block style={styles.subTitle}>
+			<Text color="black" size={16}>
+			  What is the name of your Orchard?
+			</Text>
+                      </Block>
+                      <Input
+                        borderless
+                        placeholder="Name of Orchard"
+                        iconContent={
+				<Icon
+				      size={16}
+				      color={argonTheme.COLORS.ICON}
+				      name="pencil"
+				      family="ArgonExtra"
+				      style={styles.inputIcons}
+				      />
+				}
+			onChangeText={orchardName => setOrchardName(orchardName)}
+			defaultValue={orchardName}
+				/>
+				   </Block>
+				    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+		      <Block style={styles.subTitle}>
+			<Text color="black" size={16}>
+			  What is the name of your Orchard?
+			</Text>
+                      </Block>
+                      <Input
+                        borderless
+                        placeholder="Name of Orchard"
+                        iconContent={
+				<Icon
+				      size={16}
+				      color={argonTheme.COLORS.ICON}
+				      name="pencil"
+				      family="ArgonExtra"
+				      style={styles.inputIcons}
+				      />
+				}
+			onChangeText={orchardName => setOrchardName(orchardName)}
+			defaultValue={orchardName}
+				/>
+				    </Block>
+				     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+		      <Block style={styles.subTitle}>
+			<Text color="black" size={16}>
+			  What is the name of your Orchard?
+			</Text>
+                      </Block>
+                      <Input
+                        borderless
+                        placeholder="Name of Orchard"
+                        iconContent={
+				<Icon
+				      size={16}
+				      color={argonTheme.COLORS.ICON}
+				      name="pencil"
+				      family="ArgonExtra"
+				      style={styles.inputIcons}
+				      />
+				}
+			onChangeText={orchardName => setOrchardName(orchardName)}
+			defaultValue={orchardName}
+				/>
                     </Block>
-		    
+				  
+				  </Block>
 
-		    
-		    
-		 
+				 <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+		      <Block style={styles.subTitle}>
+			<Text color="black" size={16}>
+			  What is the name of your Orchard?
+			</Text>
+                      </Block>
+                      <Input
+                        borderless
+                        placeholder="Name of Orchard"
+                        iconContent={
+				<Icon
+				      size={16}
+				      color={argonTheme.COLORS.ICON}
+				      name="pencil"
+				      family="ArgonExtra"
+				      style={styles.inputIcons}
+				      />
+				}
+			onChangeText={orchardName => setOrchardName(orchardName)}
+			defaultValue={orchardName}
+				/>
+                    </Block>
 
-		    
-                  </KeyboardAvoidingView>
-                </Block>
-              </Block>
-            </Block>
-          </Block>
-        </ImageBackground>
-		</Block>
-		</ScrollView>
-    );
+			       
+
+			    </Block>
+			  </KeyboardAvoidingView>
+			</Block>
+
+			
+			<Block width={width * 0.8} style={{ marginBottom: 15 , paddingTop:50}}>
+			  <Block center>
+			    <Button color="primary" style={styles.button}
+				    onPress={() => navigation.navigate("cancel")}>
+    <Text color="black">
+      Cancel
+    </Text>
+</Button>
+</Block>
+
+</Block>
+
+
+
+
+
+
+
+
+</Block>
+</Block>
+</Block>
+</ImageBackground>
+</Block>
+</ScrollView>
+	);
 }
 
 

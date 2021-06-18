@@ -23,9 +23,6 @@ const { width, height } = Dimensions.get("screen");
 
 const  newOrchard = () => {     
 	
-	
-	
-
     const [orchardName, setOrchardName] = useState();
     const navigation = useNavigation() // <-- add this line
     
@@ -64,7 +61,7 @@ const  newOrchard = () => {
 			    enabled
 			    >
 			    
-			    <Block width={width * 0.8} style={{ marginBottom: 15, paddingBottom:250 }}>
+			    <Block width={width * 0.8} style={{ marginBottom: 15, paddingBottom:300 }}>
 			      <Block style={styles.orchOverview}>
 				<Text color="black" size={16}>
 				  Add a Tree 
@@ -167,61 +164,22 @@ const  newOrchard = () => {
 				</Block>
 
 
+	    
+		<Block style={{flexDirection: "row"}}>
+		
+	    
+	    </Block>
 
-				<Block style={{flexDirection: "row"}}>
-				   <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+
+	    	 <Block width={width * 0.8} style={{ marginBottom: 15 }}>
 		      <Block style={styles.subTitle}>
 			<Text color="black" size={16}>
-			  What is the name of your Orchard?
+			  Tree Age
 			</Text>
                       </Block>
                       <Input
                         borderless
-                        placeholder="Name of Orchard"
-                        iconContent={
-				<Icon
-				      size={16}
-				      color={argonTheme.COLORS.ICON}
-				      name="pencil"
-				      family="ArgonExtra"
-				      style={styles.inputIcons}
-				      />
-				}
-			onChangeText={orchardName => setOrchardName(orchardName)}
-			defaultValue={orchardName}
-				/>
-				   </Block>
-				    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
-		      <Block style={styles.subTitle}>
-			<Text color="black" size={16}>
-			  What is the name of your Orchard?
-			</Text>
-                      </Block>
-                      <Input
-                        borderless
-                        placeholder="Name of Orchard"
-                        iconContent={
-				<Icon
-				      size={16}
-				      color={argonTheme.COLORS.ICON}
-				      name="pencil"
-				      family="ArgonExtra"
-				      style={styles.inputIcons}
-				      />
-				}
-			onChangeText={orchardName => setOrchardName(orchardName)}
-			defaultValue={orchardName}
-				/>
-				    </Block>
-				     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
-		      <Block style={styles.subTitle}>
-			<Text color="black" size={16}>
-			  What is the name of your Orchard?
-			</Text>
-                      </Block>
-                      <Input
-                        borderless
-                        placeholder="Name of Orchard"
+                        placeholder="dd/mm/yyy"
                         iconContent={
 				<Icon
 				      size={16}
@@ -235,13 +193,11 @@ const  newOrchard = () => {
 			defaultValue={orchardName}
 				/>
                     </Block>
-				  
-				  </Block>
 
 				 <Block width={width * 0.8} style={{ marginBottom: 15 }}>
 		      <Block style={styles.subTitle}>
 			<Text color="black" size={16}>
-			  What is the name of your Orchard?
+			  Tree Condition/Status
 			</Text>
                       </Block>
                       <Input
@@ -261,24 +217,31 @@ const  newOrchard = () => {
 				/>
                     </Block>
 
-			       
+				 <Block row  width={width * 0.75} style={{justifyContent: 'space-between'}}>
+                      <Button color="secondary" style={styles.createButton}
+			      onPress={() => navigation.navigate("prev")}
+			      >
+                        <Text bold size={14} color={argonTheme.COLORS.BLACK}>
+                          Previous Step
+                        </Text>
+                      </Button>
+		      <Button color="secondary" style={styles.createButton}
+			      onPress={() => navigation.navigate("next", {orchName: orchardName})}
+			      >
+                        <Text bold size={14} color={argonTheme.COLORS.BLACK}>
+                          Next Step
+                        </Text>
+                      </Button>
+				 </Block>
+				 
+</Block>
 
-			    </Block>
+
 			  </KeyboardAvoidingView>
 			</Block>
 
 			
-			<Block width={width * 0.8} style={{ marginBottom: 15 , paddingTop:50}}>
-			  <Block center>
-			    <Button color="primary" style={styles.button}
-				    onPress={() => navigation.navigate("cancel")}>
-    <Text color="black">
-      Cancel
-    </Text>
-</Button>
-</Block>
 
-</Block>
 
 
 

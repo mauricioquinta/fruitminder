@@ -63,17 +63,17 @@ const  newOrchard = () => {
                     enabled
                     >
 		    
-		    <Block width={width * 0.8} style={{ marginBottom: 15, paddingBottom:250 }}>
+		    <Block width={width * 0.8} style={{ marginBottom: 15, paddingBottom:50 }}>
 		      <Block style={styles.orchOverview}>
 			<Text color="black" size={16}>
-			 Locate a Tree
+			 Log Overview
 			</Text>
                       </Block>
 		      
                       <Block center>
 			<Button color="primary" style={styles.button}>
 			  <Text color="black">
-			    Locate via Map
+			    Add a Log
 			  </Text>
 			</Button>
 		      </Block>
@@ -81,7 +81,7 @@ const  newOrchard = () => {
 		      <Block center>
 			<Button color="primary" style={styles.button}>
 			  <Text color="black">
-			    Locate via GPS
+			    Find a Log 
 			  </Text>
 			</Button>
 		      </Block>
@@ -89,12 +89,27 @@ const  newOrchard = () => {
 		      <Block center>
 			<Button color="primary" style={styles.button}>
 			  <Text color="black">
-			    Locate via Filters
+			    View All Logs
 			  </Text>
 			</Button>
 		      </Block>
 
 	    
+		      
+                    </Block>
+
+		    <Block width={width * 0.8} style={{ marginBottom: 15, paddingBottom:250 }}>
+		      <Block style={styles.orchOverview}>
+			<Text color="black" size={16}>
+			 Recent Logs
+			</Text>
+                      </Block>
+		      
+                      <Block flex  style={styles.nearbyTrees}>
+			<Card item={articles[0]} horizontal  />
+			<Card item={articles[1]} horizontal />
+			<Card item={articles[2]} horizontal />
+		      </Block>
 		      
                     </Block>
 

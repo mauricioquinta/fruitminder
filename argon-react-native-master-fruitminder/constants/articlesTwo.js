@@ -19,12 +19,12 @@ export default [
   {
     title: 'This is some update on row X',
       image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQafdwwA9ujKDX2kMnZzY7kUyfFsYRYSUI6cg&usqp=CAU',
-    cta: 'View article' 
+    cta: 'miscelanius information on following task' 
   },
   {
     title: 'And What we have done to row Y  ',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQafdwwA9ujKDX2kMnZzY7kUyfFsYRYSUI6cg&usqp=CAU',
-    cta: 'View article', 
+    cta: 'miscalenius information on task', 
     horizontal: true
   },
 ];

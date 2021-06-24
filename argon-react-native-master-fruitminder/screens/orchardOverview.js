@@ -11,8 +11,14 @@ import {
 } from "react-native";
 import { Block, Checkbox, Text, theme } from "galio-framework";
 
-import { Button, Icon, Input,Card } from "../components";
+import  Button from '../components/Button';
+import Icon from '../components/Icon';
+import Input from '../components/Input';
+import  Card from '../components/Card';
+import  InsightCard from '../components/InsightCard';
+
 import { Images, argonTheme } from "../constants";
+
 import articles from '../constants/articles';
 import {  useNavigation } from '@react-navigation/native' // <-- import useNavigation hook
 
@@ -84,14 +90,16 @@ const  newOrchard = () => {
                       </Block>
 		      
                       <Block flex  style={styles.orchInsights}>
-			<Card style={{ marginRight:5 }}
+			<InsightCard style={{ marginRight:5 }}
 			      item={articles[4]} />
-			<Card style={{ marginLeft:5 }}item={articles[3]}  />
+			<InsightCard  style={{ marginLeft:5 }}
+			      item={articles[3]}  />
 		      </Block>
 		     
 
 		      <Block center>
-			<Button color="primary" style={styles.button}>
+			<Button color="primary" style={styles.button}
+				onPress={() => navigation.navigate("insights")}>
 			  <Text color="black">
 			    View all insights
 			  </Text>

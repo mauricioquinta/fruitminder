@@ -32,6 +32,7 @@ import findClosestTree from "../screens/findClosestTree"
 import locateTree from "../screens/findTree"
 import addTree from "../screens/addTree"
 import logOverview from "../screens/logOverview"
+import logInsights from "../screens/allInsights"
 
 // drawer
 import CustomDrawerContent from "./Menu";
@@ -453,7 +454,24 @@ function OrchardOverview(props) {
           headerTransparent: true
         }}
 	/>
-      <Stack.Screen name="prev" component={orchRowDetails} />
+      <Stack.Screen name="insights" component={AllInsights} />
+      <Stack.Screen name="next" component={Home} />
+    
+    </Stack.Navigator>
+  );
+}
+
+function AllInsights(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="allInsights"
+        component={logInsights}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="insights" component={orchRowDetails} />
       <Stack.Screen name="next" component={Home} />
     
     </Stack.Navigator>

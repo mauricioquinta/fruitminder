@@ -23,16 +23,14 @@ class InsightCard extends React.Component {
 
     return (
       <Block row={horizontal} card flex style={cardContainer}>
-        <TouchableWithoutFeedback onPress={() => navigation.navigate('mostTasks')}>
-          <Block flex style={imgContainer}>
-            <Image source={{uri: item.image}} style={imageStyles} />
-          </Block>
-        </TouchableWithoutFeedback>
-        <TouchableWithoutFeedback onPress={() => navigation.navigate('mostTasks')}>
+        <TouchableWithoutFeedback onPress={() => navigation.navigate('details')}>
+	  
           <Block flex space="between" style={styles.cardDescription}>
-            <Text size={14} style={styles.cardTitle}>{item.title}</Text>
-            <Text color="grey" size={12} style={styles.subTittle}>{item.cta}</Text>
+	    <Text size={14} style={styles.cardTitle}>{item.row}</Text>
+            <Text size={14} style={styles.cardTitle}>{item.place} Place Row with most tasks</Text>
+            <Text color="grey" size={12} style={styles.subTittle}>view details</Text>
           </Block>
+	    
         </TouchableWithoutFeedback>
       </Block>
     );
@@ -58,8 +56,8 @@ const styles = StyleSheet.create({
   },
   cardTitle: {
     flex: 1,
-    flexWrap: 'wrap',
-    paddingBottom: 6
+      flexWrap: 'wrap',
+      fontWeight: 'bold'
   },
     subTittle: {
     flex: 1,

@@ -1,8 +1,11 @@
 import React from 'react';
 import { withNavigation } from '@react-navigation/compat';
 import PropTypes from 'prop-types';
-import { StyleSheet, Dimensions, Image, TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, Dimensions, Image, TouchableWithoutFeedback, View} from 'react-native';
 import { Block, Text, theme } from 'galio-framework';
+import Button from './Button';
+import Icon from './Icon';
+import DetailButton from './DetailButton';
 
 import { argonTheme } from '../constants';
 
@@ -23,16 +26,50 @@ class InsightCard extends React.Component {
 
     return (
       <Block row={horizontal} card flex style={cardContainer}>
-        <TouchableWithoutFeedback onPress={() => navigation.navigate('mostTasks')}>
-          <Block flex style={imgContainer}>
-            <Image source={{uri: item.image}} style={imageStyles} />
-          </Block>
-        </TouchableWithoutFeedback>
-        <TouchableWithoutFeedback onPress={() => navigation.navigate('mostTasks')}>
+        <TouchableWithoutFeedback onPress={() => navigation.navigate('details')}>
+	  
           <Block flex space="between" style={styles.cardDescription}>
-            <Text size={14} style={styles.cardTitle}>{item.title}</Text>
-            <Text color="grey" size={12} style={styles.subTittle}>{item.cta}</Text>
+	    <Text size={16} style={styles.cardTitle}>{item.tittle}</Text>
+            <Text color="grey" size={14} style={styles.subTittle}>{item.task} Place Row with most tasks</Text>
+	    
+	    <Block style={{flexDirection:'row', flexWrap:'wrap'}} >
+	      <Block style={{ flex: 4 }}>
+		<Block style={{flexDirection:'row', flexWrap:'wrap'}}>
+		  <Icon
+		    size={16}
+		    color={argonTheme.COLORS.ICON}
+		    name="calendar-date"
+		    family="ArgonExtra"
+		    style={styles.inputIcons}
+		    />
+		 
+		  <Text> {item.date} </Text>
+		</Block>
+		<Block style={{flexDirection:'row', flexWrap:'wrap'}}>
+		  <Icon
+		    size={16}
+		    color={argonTheme.COLORS.ICON}
+		    name="single-01"
+		    family="ArgonExtra"
+		    style={styles.inputIcons}
+		    />
+		  <Text> {item.employee} </Text>
+		</Block>		
+	      </Block>
+	      
+	      <Block>
+		<View>
+		  <DetailButton small='true'>
+		    <Text> {item.priority}</Text>
+		  </DetailButton>
+		</View>
+	      </Block>
+	      
+	    </Block>
+	
+	    
           </Block>
+	    
         </TouchableWithoutFeedback>
       </Block>
     );
@@ -52,19 +89,20 @@ const styles = StyleSheet.create({
     backgroundColor: theme.COLORS.WHITE,
     marginVertical: theme.SIZES.BASE,
     borderWidth: 0,
-      minHeight: 125,
-      minWidth: 120,
+      minHeight: 150,
+      minWidth: 130,
     marginBottom: 10
   },
   cardTitle: {
     flex: 1,
-    flexWrap: 'wrap',
-    paddingBottom: 6
+      flexWrap: 'wrap',
+      fontWeight: 'bold',
+      paddingBottom:10
   },
     subTittle: {
     flex: 1,
     flexWrap: 'wrap',
-    paddingBottom: 6
+    paddingBottom: 10
     },
   cardDescription: {
     padding: theme.SIZES.BASE / 2

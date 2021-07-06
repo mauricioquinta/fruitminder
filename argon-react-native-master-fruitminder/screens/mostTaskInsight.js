@@ -16,10 +16,11 @@ import Icon from '../components/Icon';
 import Input from '../components/Input';
 import  Card from '../components/Card';
 import  InsightCard from '../components/InsightCard';
+import MostTaskCard from '../components/MostTaskCard';
 
 import { Images, argonTheme } from "../constants";
 
-import articles from '../constants/articles';
+import articles from '../constants/mostTaskArticle';
 import {  useNavigation } from '@react-navigation/native' // <-- import useNavigation hook
 
 
@@ -38,7 +39,7 @@ const  newOrchard = () => {
 	
 	return (
 	    
-	    <ScrollView contentContainerStyle={{ paddingBottom: 250 }}>
+	    <ScrollView contentContainerStyle={{ paddingBottom: 550 }}>
       <Block flex middle>
         <StatusBar hidden />
         <ImageBackground
@@ -72,7 +73,10 @@ const  newOrchard = () => {
 		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
 		      <Block style={styles.orchOverview}>
 			<Text color="black" size={16}>
-			 Orchard Overview
+			  Orchard Insight:
+			</Text>
+			<Text color="grey" size={14}>
+			  Row with most tasks
 			</Text>
                       </Block>
 		      
@@ -82,7 +86,7 @@ const  newOrchard = () => {
 		      
                     </Block>
 
-		     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+		     <Block width={width * 0.8} style={{ marginBottom:15  }}>
 		      <Block style={styles.subTitle}>
 			<Text color="black" size={16}>
 			 Orchard Insights
@@ -90,50 +94,25 @@ const  newOrchard = () => {
                       </Block>
 		      
                       <Block flex  style={styles.orchInsights}>
-			<InsightCard style={{ marginRight:5 }}
+			<MostTaskCard style={{ marginRight:5 }}
 			      item={articles[4]} />
-			<InsightCard  style={{ marginLeft:5 }}
-			      item={articles[3]}  />
+			<MostTaskCard  style={{ marginLeft:5 }}
+				      item={articles[0]}  />
+			<MostTaskCard  style={{ marginLeft:5 }}
+				      item={articles[1]}  />
+			<MostTaskCard  style={{ marginLeft:5 }}
+				      item={articles[2]}  />
+			<MostTaskCard  style={{ marginLeft:5 }}
+				      item={articles[3]}  />
+			
 		      </Block>
-		     
-
-		      <Block center>
-			<Button color="primary" style={styles.button}
-				onPress={() => navigation.navigate("insights")}>
-			  <Text color="black">
-			    View all insights
-			  </Text>
-			</Button>
-		      </Block>
-
 		     
 		      
                     </Block>
 
 		     
-		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
-		      <Block style={styles.subTitle}>
-			<Text color="black" size={16}>
-			  Orchard Admin
-			</Text>
-                      </Block>
-		      
-                      <Block center>
-			<Button color="primary" style={styles.button}>
-			  <Text color="black">
-			    Edit Orchard Categories
-			    </Text>
-			</Button>
-		      </Block>
-
-		      <Block center>
-			<Button color="primary" style={styles.button}>
-			  <Text color="black">
-			    Orchard Passcode
-			    </Text>
-			</Button>
-		      </Block>
-
+		     <Block width={width * 0.8} style={{paddingTop:590,  marginBottom: 15 }}>
+		     
 		      <Block center>
 			<Button color="primary" style={styles.button}
 				onPress={() => navigation.navigate("back")}>
@@ -142,8 +121,6 @@ const  newOrchard = () => {
 			    </Text>
 			</Button>
 		      </Block>
-
-	    
                     </Block>
 
 		    
@@ -201,7 +178,7 @@ const styles = StyleSheet.create({
     button: {
     marginBottom: theme.SIZES.BASE,
 	width: width - theme.SIZES.BASE * 2.6,
-	borderColor: 'black'
+	borderColor: 'black',
     },
   inputIcons: {
     marginRight: 12
@@ -224,8 +201,7 @@ const styles = StyleSheet.create({
     orchInsights: {
 	marginTop: 5,
 	paddingBottom:150,
-	flexDirection: "row",
-	flexWrap: "wrap",
+	flexDirection: "column"
   },
   orchOverview: {
       marginTop: 5,

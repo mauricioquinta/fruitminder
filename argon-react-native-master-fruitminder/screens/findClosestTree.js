@@ -101,9 +101,9 @@ const  newOrchard = () => {
 
 		      <Block center>
 			<Button color="primary" style={styles.button}
-				onPress={() => navigation.navigate("cancel")}>
+				onPress={() => navigation.navigate("back")}>
 			  <Text color="black">
-			    Cancel
+			    Back
 			    </Text>
 			</Button>
 		      </Block>

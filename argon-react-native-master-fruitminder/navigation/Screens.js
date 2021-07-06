@@ -33,6 +33,8 @@ import locateTree from "../screens/findTree"
 import addTree from "../screens/addTree"
 import logOverview from "../screens/logOverview"
 import logInsights from "../screens/allInsights"
+import mostTaskInsight from "../screens/mostTaskInsight"
+import mostTaskDetail from "../screens/mostTaskDetail"
 
 // drawer
 import CustomDrawerContent from "./Menu";
@@ -471,8 +473,46 @@ function AllInsights(props) {
           headerTransparent: true
         }}
 	/>
-      <Stack.Screen name="insights" component={orchRowDetails} />
-      <Stack.Screen name="next" component={Home} />
+      <Stack.Screen name="mostTasks" component={MostTasksInsights} />
+      <Stack.Screen name="mostLogs" component={Home} />
+      <Stack.Screen name="back" component={OrchardHome} />
+    
+    </Stack.Navigator>
+  );
+}
+
+function MostTasksInsights(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+	name="mostTaskInsight"
+        component={mostTaskInsight}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="details" component={MostTasksDetails} />
+      <Stack.Screen name="mostLogs" component={Home} />
+      <Stack.Screen name="back" component={AllInsights} />
+    
+    </Stack.Navigator>
+  );
+}
+
+
+function MostTasksDetails(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+	name="mostTaskInsight"
+        component={mostTaskDetail}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="mostTasks" component={orchRowDetails} />
+      <Stack.Screen name="mostLogs" component={Home} />
+      <Stack.Screen name="back" component={MostTasksInsights} />
     
     </Stack.Navigator>
   );
@@ -488,7 +528,7 @@ function FindClosestTree(props) {
           headerTransparent: true
         }}
 	/>
-      <Stack.Screen name="cancel" component={OrchardHome} />
+      <Stack.Screen name="back" component={OrchardHome} />
       <Stack.Screen name="next" component={Home} />
     
     </Stack.Navigator>
@@ -505,7 +545,7 @@ function FindTree(props) {
           headerTransparent: true
         }}
 	/>
-      <Stack.Screen name="cancel" component={OrchardHome} />
+      <Stack.Screen name="back" component={OrchardHome} />
       <Stack.Screen name="next" component={Home} />
     
     </Stack.Navigator>
@@ -523,7 +563,7 @@ function AddTree(props) {
           headerTransparent: true
         }}
 	/>
-      <Stack.Screen name="cancel" component={OrchardHome} />
+      <Stack.Screen name="back" component={OrchardHome} />
       <Stack.Screen name="next" component={Home} />
     
     </Stack.Navigator>
@@ -542,7 +582,7 @@ function LogOverview(props) {
           headerTransparent: true
         }}
 	/>
-      <Stack.Screen name="cancel" component={OrchardHome} />
+      <Stack.Screen name="back" component={OrchardHome} />
       <Stack.Screen name="next" component={Home} />
     
     </Stack.Navigator>

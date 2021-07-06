@@ -219,7 +219,7 @@ const  newOrchard = () => {
 
 				 <Block row  width={width * 0.75} style={{justifyContent: 'space-between'}}>
                       <Button color="secondary" style={styles.createButton}
-			      onPress={() => navigation.navigate("prev")}
+			      onPress={() => navigation.navigate("back")}
 			      >
                         <Text bold size={14} color={argonTheme.COLORS.BLACK}>
                           Previous Step

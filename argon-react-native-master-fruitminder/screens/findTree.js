@@ -98,18 +98,19 @@ const  newOrchard = () => {
 		      
                     </Block>
 
-		    <Block width={width * 0.8} style={{ marginBottom: 15 , paddingTop:50}}>
+		    <Block width={width * 0.8} style={{ marginBottom: 15 , paddingTop:40}}>
 		  
 
 		      <Block center>
 			<Button color="primary" style={styles.button}
-				onPress={() => navigation.navigate("cancel")}>
+				onPress={() => navigation.navigate("back")}>
 			  <Text color="black">
-			    Cancel
+			    Back
 			    </Text>
 			</Button>
 		      </Block>
-		      
+
+	    
                     </Block>
 		    
 

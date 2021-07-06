@@ -7,7 +7,8 @@ import {
     KeyboardAvoidingView,
     ScrollView,
     Image,
-    View
+    View,
+    TouchableOpacity
     
 } from "react-native";
 import { Block, Checkbox, Text, theme } from "galio-framework";
@@ -81,16 +82,19 @@ const  newOrchard = () => {
 		    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
 		      
 		      <Block style={styles.subTitle}>
-			<Text color="black" size={14}>
-			 Rows with most taks
-			</Text>	
+                             <Text color="black" size={14}>
+			 Rows with most tasks
+			</Text>				
                       </Block>
 		      
                       <Block flex  style={styles.orchInsights}>
+		
 			<InsightCard style={{ marginRight:5 }}
-			      item={articles[4]} />
+				     item={articles[4]}/>
+			
 			<InsightCard  style={{ marginLeft:5 }}
-			      item={articles[3]}  />
+				      item={articles[3]}
+				      onPress={() => navigation.navigate("mostLogs")}/>
 		      </Block>
 
 
@@ -160,7 +164,17 @@ const  newOrchard = () => {
 		      </Block>
                     </Block>
 
-		    
+		    <Block width={width * 0.8} style={{paddingTop:590,  marginBottom: 15 }}>
+		     
+		      <Block center>
+			<Button color="primary" style={styles.button}
+				onPress={() => navigation.navigate("back")}>
+			  <Text color="black">
+			    Back
+			    </Text>
+			</Button>
+		      </Block>
+                    </Block>
 		 
 
 		    
@@ -214,8 +228,7 @@ const styles = StyleSheet.create({
   },
     button: {
     marginBottom: theme.SIZES.BASE,
-	width: width - theme.SIZES.BASE * 2.6,
-	borderColor: 'black'
+	width: width - theme.SIZES.BASE * 4
     },
   inputIcons: {
     marginRight: 12

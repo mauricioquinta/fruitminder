@@ -6,18 +6,22 @@ import {
   StatusBar,
     KeyboardAvoidingView,
     ScrollView,
-    Image
+    Image,
+    View
     
 } from "react-native";
 import { Block, Checkbox, Text, theme } from "galio-framework";
 
-import Button  from "../components/Button";
-import Icon from "../components/Icon";
-import Input from "../components/Input";
-import Card from "../components/Card";
-import TreeCard from "../components/TreeCard";
+import  Button from '../components/Button';
+import Icon from '../components/Icon';
+import Input from '../components/Input';
+import  Card from '../components/Card';
+import  InsightCard from '../components/InsightCard';
+import DetailCard from '../components/MostTaskDetailCard';
+
 import { Images, argonTheme } from "../constants";
-import articles from '../constants/articlesTwo';
+
+import articles from '../constants/mostTaskDetailArticle';
 import {  useNavigation } from '@react-navigation/native' // <-- import useNavigation hook
 
 
@@ -36,7 +40,7 @@ const  newOrchard = () => {
 	
 	return (
 	    
-	    <ScrollView contentContainerStyle={{ paddingBottom: 250 }}>
+	    <ScrollView contentContainerStyle={{ paddingBottom: 550 }}>
       <Block flex middle>
         <StatusBar hidden />
         <ImageBackground
@@ -67,42 +71,38 @@ const  newOrchard = () => {
                     enabled
                     >
 		    
-		    <Block width={width * 0.8} style={{ marginBottom: 15, paddingBottom:250 }}>
-		      <Block style={styles.orchOverview}>
+		   
+
+		     <Block width={width * 0.8} style={{ marginBottom:15  }}>
+		      <Block style={styles.subTitle}>
 			<Text color="black" size={16}>
-			 Locate a Tree
+			 Orchard Insights
 			</Text>
 			<Text color="grey" size={14}>
-			 Closest Trees to you
+			  Row with most tasks - Details
 			</Text>
                       </Block>
 		      
-                      <Block flex  style={styles.nearbyTrees}>
-			<TreeCard item={articles[0]} horizontal  />
-			<TreeCard item={articles[1]} horizontal />
-			<TreeCard item={articles[2]} horizontal />
+                      <Block flex  style={styles.orchInsights}>
+			<DetailCard style={{ marginRight:5 }}
+				    item={articles[0]} />
+			<DetailCard  style={{ marginLeft:5 }}
+				     item={articles[1]}  />
+			<DetailCard  style={{ marginLeft:5 }}
+				     item={articles[2]}  />
+			<DetailCard  style={{ marginLeft:5 }}
+				     item={articles[3]}  />
+			<DetailCard  style={{ marginLeft:5 }}
+				     item={articles[4]}  />
+			
 		      </Block>
+		     
 		      
                     </Block>
 
-		    
-
 		     
-		    <Block width={width * 0.8} style={{ marginBottom: 15 , paddingTop:50}}>
-		      <Block style={styles.subTitle}>
-			<Text color="black" size={16}>
-			  GPS Coordinates
-			</Text>
-                      </Block>
-		      
-                      <Block center>
-			<Button color="primary" style={styles.button}>
-			  <Text color="red">
-			    Find Coordinates
-			    </Text>
-			</Button>
-		      </Block>
-
+		     <Block width={width * 0.8} style={{paddingTop:725,  marginBottom: 15 }}>
+		     
 		      <Block center>
 			<Button color="primary" style={styles.button}
 				onPress={() => navigation.navigate("back")}>
@@ -111,10 +111,9 @@ const  newOrchard = () => {
 			    </Text>
 			</Button>
 		      </Block>
-		      
                     </Block>
 
-
+		    
 		 
 
 		    
@@ -169,7 +168,7 @@ const styles = StyleSheet.create({
     button: {
     marginBottom: theme.SIZES.BASE,
 	width: width - theme.SIZES.BASE * 2.6,
-	borderColor: 'black'
+	borderColor: 'black',
     },
   inputIcons: {
     marginRight: 12
@@ -189,11 +188,10 @@ const styles = StyleSheet.create({
   subTitle: {
       marginTop: 5,
   },
-    orchAdmin: {
+    orchInsights: {
 	marginTop: 5,
 	paddingBottom:150,
-	flexDirection: "row",
-	flexWrap: "wrap",
+	flexDirection: "column"
   },
   orchOverview: {
       marginTop: 5,
@@ -211,9 +209,6 @@ const styles = StyleSheet.create({
     zIndex: 2,
     position: 'relative',
     marginTop: '-50%'
-    },
-    nearbyTrees: {
-	paddingBottom:100
   }
   
 });

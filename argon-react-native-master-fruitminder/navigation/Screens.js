@@ -35,7 +35,7 @@ import logOverview from "../screens/logOverview"
 import logInsights from "../screens/allInsights"
 import mostTaskInsight from "../screens/mostTaskInsight"
 import mostTaskDetail from "../screens/mostTaskDetail"
-
+import treeDetail from "../screens/treeDetail"
 // drawer
 import CustomDrawerContent from "./Menu";
 
@@ -529,11 +529,31 @@ function FindClosestTree(props) {
         }}
 	/>
       <Stack.Screen name="back" component={OrchardHome} />
+      <Stack.Screen name="details" component={TreeDetail} />
+    
+    </Stack.Navigator>
+  );
+}
+
+function TreeDetail(props) {
+  return (
+    <Stack.Navigator mode="card" headerMode="none">
+      <Stack.Screen
+        name="treeDetailPage "
+        component={treeDetail}
+        option={{
+          headerTransparent: true
+        }}
+	/>
+      <Stack.Screen name="back" component={OrchardHome} />
       <Stack.Screen name="next" component={Home} />
     
     </Stack.Navigator>
   );
 }
+
+
+
 
 function FindTree(props) {
   return (

@@ -78,8 +78,8 @@ const  newOrchard = () => {
 			<Text color="black" size={16}>
 			 Orchard Insights
 			</Text>
-			<Text color="grey" size={14}>
-			  Row with most tasks - Details
+			<Text color="grey" size={15}>
+			  Row X  with Y most tasks - Details
 			</Text>
                       </Block>
 		      
